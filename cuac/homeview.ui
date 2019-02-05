@@ -27,7 +27,7 @@
      <enum>QTabWidget::West</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tabanimalTab">
      <attribute name="title">
@@ -213,7 +213,7 @@
        <string>Total number of clients: 200</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="runACMButton">
       <property name="geometry">
        <rect>
         <x>20</x>

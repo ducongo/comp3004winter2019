@@ -57,7 +57,7 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
-    QPushButton *pushButton;
+    QPushButton *runACMButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -165,9 +165,9 @@ public:
         label_6 = new QLabel(acmTab);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(20, 110, 321, 17));
-        pushButton = new QPushButton(acmTab);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(20, 150, 171, 25));
+        runACMButton = new QPushButton(acmTab);
+        runACMButton->setObjectName(QStringLiteral("runACMButton"));
+        runACMButton->setGeometry(QRect(20, 150, 171, 25));
         tabWidgetHomeView->addTab(acmTab, QString());
         HomeView->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(HomeView);
@@ -183,7 +183,7 @@ public:
 
         retranslateUi(HomeView);
 
-        tabWidgetHomeView->setCurrentIndex(2);
+        tabWidgetHomeView->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(HomeView);
@@ -204,7 +204,7 @@ public:
         label_4->setText(QApplication::translate("HomeView", "ACM Algorithm", Q_NULLPTR));
         label_5->setText(QApplication::translate("HomeView", "Total number of pets available for adoption: 200", Q_NULLPTR));
         label_6->setText(QApplication::translate("HomeView", "Total number of clients: 200", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("HomeView", "RUN ACM ALGORITHM", Q_NULLPTR));
+        runACMButton->setText(QApplication::translate("HomeView", "RUN ACM ALGORITHM", Q_NULLPTR));
         tabWidgetHomeView->setTabText(tabWidgetHomeView->indexOf(acmTab), QApplication::translate("HomeView", "ACM Algorithm", Q_NULLPTR));
     } // retranslateUi
 

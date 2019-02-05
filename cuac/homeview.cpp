@@ -40,3 +40,28 @@ HomeView::~HomeView()
 {
     delete ui;
 }
+
+void HomeView::on_runACMButton_clicked()
+{
+    qDebug("Running ACM Algorithm");
+}
+
+void HomeView::on_listWidgetAnimal_itemDoubleClicked(QListWidgetItem *item)
+{
+    qDebug("Animal Selected at index: %d", item->listWidget()->currentRow());
+}
+
+void HomeView::on_listWidgetClient_itemDoubleClicked(QListWidgetItem *item)
+{
+    qDebug("Client Selected at index: %d", item->listWidget()->currentRow());
+}
+
+void HomeView::on_addAnimal_clicked()
+{
+    qDebug("Adding animal");
+}
+
+void HomeView::on_addClient_clicked()
+{
+    qDebug("Adding animal");
+}
