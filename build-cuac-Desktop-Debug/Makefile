@@ -51,10 +51,26 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../cuac/main.cpp \
-		../cuac/homeview.cpp moc_homeview.cpp
+		../cuac/homeview.cpp \
+		../cuac/animalprofiledialog.cpp \
+		../cuac/animalprofileeditdialog.cpp \
+		../cuac/clientprofiledialog.cpp \
+		../cuac/clientprofileeditdialog.cpp moc_homeview.cpp \
+		moc_animalprofiledialog.cpp \
+		moc_animalprofileeditdialog.cpp \
+		moc_clientprofiledialog.cpp \
+		moc_clientprofileeditdialog.cpp
 OBJECTS       = main.o \
 		homeview.o \
-		moc_homeview.o
+		animalprofiledialog.o \
+		animalprofileeditdialog.o \
+		clientprofiledialog.o \
+		clientprofileeditdialog.o \
+		moc_homeview.o \
+		moc_animalprofiledialog.o \
+		moc_animalprofileeditdialog.o \
+		moc_clientprofiledialog.o \
+		moc_clientprofileeditdialog.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -145,8 +161,16 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../cuac/cuac.pro ../cuac/homeview.h ../cuac/main.cpp \
-		../cuac/homeview.cpp
+		../cuac/cuac.pro ../cuac/homeview.h \
+		../cuac/animalprofiledialog.h \
+		../cuac/animalprofileeditdialog.h \
+		../cuac/clientprofiledialog.h \
+		../cuac/clientprofileeditdialog.h ../cuac/main.cpp \
+		../cuac/homeview.cpp \
+		../cuac/animalprofiledialog.cpp \
+		../cuac/animalprofileeditdialog.cpp \
+		../cuac/clientprofiledialog.cpp \
+		../cuac/clientprofileeditdialog.cpp
 QMAKE_TARGET  = cuac
 DESTDIR       = 
 TARGET        = cuac
@@ -155,7 +179,7 @@ TARGET        = cuac
 first: all
 ####### Build rules
 
-$(TARGET): ui_homeview.h $(OBJECTS)  
+$(TARGET): ui_homeview.h ui_animalprofiledialog.h ui_animalprofileeditdialog.h ui_clientprofiledialog.h ui_clientprofileeditdialog.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../cuac/cuac.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -362,9 +386,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../cuac/homeview.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../cuac/main.cpp ../cuac/homeview.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../cuac/homeview.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../cuac/homeview.h ../cuac/animalprofiledialog.h ../cuac/animalprofileeditdialog.h ../cuac/clientprofiledialog.h ../cuac/clientprofileeditdialog.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../cuac/main.cpp ../cuac/homeview.cpp ../cuac/animalprofiledialog.cpp ../cuac/animalprofileeditdialog.cpp ../cuac/clientprofiledialog.cpp ../cuac/clientprofileeditdialog.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../cuac/homeview.ui ../cuac/animalprofiledialog.ui ../cuac/animalprofileeditdialog.ui ../cuac/clientprofiledialog.ui ../cuac/clientprofileeditdialog.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -396,22 +420,58 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_homeview.cpp
+compiler_moc_header_make_all: moc_homeview.cpp moc_animalprofiledialog.cpp moc_animalprofileeditdialog.cpp moc_clientprofiledialog.cpp moc_clientprofileeditdialog.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_homeview.cpp
+	-$(DEL_FILE) moc_homeview.cpp moc_animalprofiledialog.cpp moc_animalprofileeditdialog.cpp moc_clientprofiledialog.cpp moc_clientprofileeditdialog.cpp
 moc_homeview.cpp: ../cuac/homeview.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Documents/cuac/cuac -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../cuac/homeview.h -o moc_homeview.cpp
 
+moc_animalprofiledialog.cpp: ../cuac/animalprofiledialog.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Documents/cuac/cuac -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../cuac/animalprofiledialog.h -o moc_animalprofiledialog.cpp
+
+moc_animalprofileeditdialog.cpp: ../cuac/animalprofileeditdialog.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Documents/cuac/cuac -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../cuac/animalprofileeditdialog.h -o moc_animalprofileeditdialog.cpp
+
+moc_clientprofiledialog.cpp: ../cuac/clientprofiledialog.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Documents/cuac/cuac -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../cuac/clientprofiledialog.h -o moc_clientprofiledialog.cpp
+
+moc_clientprofileeditdialog.cpp: ../cuac/clientprofileeditdialog.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Documents/cuac/cuac -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../cuac/clientprofileeditdialog.h -o moc_clientprofileeditdialog.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_homeview.h
+compiler_uic_make_all: ui_homeview.h ui_animalprofiledialog.h ui_animalprofileeditdialog.h ui_clientprofiledialog.h ui_clientprofileeditdialog.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_homeview.h
+	-$(DEL_FILE) ui_homeview.h ui_animalprofiledialog.h ui_animalprofileeditdialog.h ui_clientprofiledialog.h ui_clientprofileeditdialog.h
 ui_homeview.h: ../cuac/homeview.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../cuac/homeview.ui -o ui_homeview.h
+
+ui_animalprofiledialog.h: ../cuac/animalprofiledialog.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../cuac/animalprofiledialog.ui -o ui_animalprofiledialog.h
+
+ui_animalprofileeditdialog.h: ../cuac/animalprofileeditdialog.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../cuac/animalprofileeditdialog.ui -o ui_animalprofileeditdialog.h
+
+ui_clientprofiledialog.h: ../cuac/clientprofiledialog.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../cuac/clientprofiledialog.ui -o ui_clientprofiledialog.h
+
+ui_clientprofileeditdialog.h: ../cuac/clientprofileeditdialog.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../cuac/clientprofileeditdialog.ui -o ui_clientprofileeditdialog.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -427,11 +487,41 @@ main.o: ../cuac/main.cpp ../cuac/homeview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../cuac/main.cpp
 
 homeview.o: ../cuac/homeview.cpp ../cuac/homeview.h \
-		ui_homeview.h
+		ui_homeview.h \
+		../cuac/animalprofiledialog.h \
+		../cuac/clientprofiledialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o homeview.o ../cuac/homeview.cpp
+
+animalprofiledialog.o: ../cuac/animalprofiledialog.cpp ../cuac/animalprofiledialog.h \
+		ui_animalprofiledialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o animalprofiledialog.o ../cuac/animalprofiledialog.cpp
+
+animalprofileeditdialog.o: ../cuac/animalprofileeditdialog.cpp ../cuac/animalprofileeditdialog.h \
+		ui_animalprofileeditdialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o animalprofileeditdialog.o ../cuac/animalprofileeditdialog.cpp
+
+clientprofiledialog.o: ../cuac/clientprofiledialog.cpp ../cuac/clientprofiledialog.h \
+		ui_clientprofiledialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o clientprofiledialog.o ../cuac/clientprofiledialog.cpp
+
+clientprofileeditdialog.o: ../cuac/clientprofileeditdialog.cpp ../cuac/clientprofileeditdialog.h \
+		ui_clientprofileeditdialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o clientprofileeditdialog.o ../cuac/clientprofileeditdialog.cpp
 
 moc_homeview.o: moc_homeview.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_homeview.o moc_homeview.cpp
+
+moc_animalprofiledialog.o: moc_animalprofiledialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_animalprofiledialog.o moc_animalprofiledialog.cpp
+
+moc_animalprofileeditdialog.o: moc_animalprofileeditdialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_animalprofileeditdialog.o moc_animalprofileeditdialog.cpp
+
+moc_clientprofiledialog.o: moc_clientprofiledialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_clientprofiledialog.o moc_clientprofiledialog.cpp
+
+moc_clientprofileeditdialog.o: moc_clientprofileeditdialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_clientprofileeditdialog.o moc_clientprofileeditdialog.cpp
 
 ####### Install
 

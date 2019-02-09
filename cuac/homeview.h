@@ -23,6 +23,10 @@ private slots:
 
     void on_listWidgetClient_itemDoubleClicked(QListWidgetItem *item);
 
+    void on_addAnimal_clicked();
+
+    void on_addClient_clicked();
+
 private:
     Ui::HomeView *ui;
 };

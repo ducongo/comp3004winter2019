@@ -1,5 +1,8 @@
 #include "homeview.h"
 #include "ui_homeview.h"
+#include "animalprofiledialog.h"
+#include "clientprofiledialog.h"
+
 
 HomeView::HomeView(QWidget *parent) :
     QMainWindow(parent),
@@ -49,11 +52,19 @@ void HomeView::on_runACMButton_clicked()
 void HomeView::on_listWidgetAnimal_itemDoubleClicked(QListWidgetItem *item)
 {
     qDebug("Animal Selected at index: %d", item->listWidget()->currentRow());
+    AnimalProfileDialog aprofile;
+    aprofile.setModal(true);
+    aprofile.exec();
 }
 
 void HomeView::on_listWidgetClient_itemDoubleClicked(QListWidgetItem *item)
 {
     qDebug("Client Selected at index: %d", item->listWidget()->currentRow());
+    ClientProfileDialog cprofile;
+    cprofile.setModal(true);
+    cprofile.exec();
+
+
 }
 
 void HomeView::on_addAnimal_clicked()
