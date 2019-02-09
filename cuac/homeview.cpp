@@ -20,7 +20,7 @@ HomeView::HomeView(QWidget *parent) :
 
     for (int i = 0; i < 200; i++){
 
-        QString path = "/home/student/Documents/src/pet.png";
+        QString path = ":/img/images/pet.png";
 
         QListWidgetItem *item = new QListWidgetItem(QIcon(path), QString("FirstName " + QString::number(i) + "\n Dog"));
 
@@ -30,7 +30,7 @@ HomeView::HomeView(QWidget *parent) :
 
     for (int i = 0; i < 20; i++){
 
-        QString path = "/home/student/Documents/src/client.png";
+        QString path = ":/img/images/client.png";
 
         QListWidgetItem *item = new QListWidgetItem(QIcon(path), QString("FirstName " + QString::number(i) + "\nLastname"));
 

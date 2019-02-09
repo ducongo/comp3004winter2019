@@ -46,3 +46,6 @@ FORMS += \
     clientprofileeditdialog.ui
 
 QT += widgets
+
+RESOURCES += \
+    ressources.qrc
