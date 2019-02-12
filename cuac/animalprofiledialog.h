@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "animal.h"
+
 namespace Ui {
 class AnimalProfileDialog;
 }
@@ -14,10 +15,12 @@ class AnimalProfileDialog : public QDialog
 public:
     explicit AnimalProfileDialog(QWidget *parent = 0);
     ~AnimalProfileDialog();
+    Animal* animal;
 
 
 private:
     Ui::AnimalProfileDialog *ui;
+
 };
 
 #endif // ANIMALPROFILEDIALOG_H

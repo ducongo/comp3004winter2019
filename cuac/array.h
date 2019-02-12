@@ -1,6 +1,6 @@
 #ifndef ARRAY_H
 #define ARRAY_H
-
+#include "database.h"
 //using namespace std;
 
 #define MAX_SIZE  200
@@ -15,6 +15,7 @@ class Array
     void add(T*);
     int getSize();
     T* get(int);
+    void dbGet();
 
   private:
     int    size;
@@ -50,5 +51,22 @@ T* Array<T>::get(int i){
   return data[i];
 }
 
+template <class T>
+void Array<T>::dbGet(){
+
+}
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
