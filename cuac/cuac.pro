@@ -25,12 +25,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        homeview.cpp
+        homeview.cpp \
+    animalprofiledialog.cpp \
+    animalprofileeditdialog.cpp \
+    clientprofiledialog.cpp \
+    clientprofileeditdialog.cpp
 
 HEADERS += \
-        homeview.h
+        homeview.h \
+    animalprofiledialog.h \
+    animalprofileeditdialog.h \
+    clientprofiledialog.h \
+    clientprofileeditdialog.h
 
 FORMS += \
-        homeview.ui
+        homeview.ui \
+    animalprofiledialog.ui \
+    animalprofileeditdialog.ui \
+    clientprofiledialog.ui \
+    clientprofileeditdialog.ui
 
 QT += widgets
+
+RESOURCES += \
+    ressources.qrc
