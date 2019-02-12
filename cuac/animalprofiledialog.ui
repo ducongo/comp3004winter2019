@@ -29,178 +29,178 @@
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="7" column="0">
+       <item row="0" column="2">
+        <widget class="QLabel" name="specie">
+         <property name="text">
+          <string>Specie:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="19" column="3">
+        <widget class="QLabel" name="intelligence_level">
+         <property name="text">
+          <string>Intelligence Level: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="20" column="2">
+        <widget class="QLabel" name="difficulty_to_train">
+         <property name="text">
+          <string>Difficulty to Train: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="20" column="3">
+        <widget class="QLabel" name="feeding_cost">
+         <property name="text">
+          <string>Feeding Cost: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="breed">
+         <property name="text">
+          <string>Breed:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <widget class="QLabel" name="kid_friendly">
+         <property name="text">
+          <string>Kid friendly: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLabel" name="weight">
+         <property name="text">
+          <string>Weight:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
         <widget class="QLabel" name="height">
          <property name="text">
-          <string>Height</string>
+          <string>Height:</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="special_skill">
+       <item row="19" column="2">
+        <widget class="QLabel" name="noise_level">
          <property name="text">
-          <string>Special Skill</string>
+          <string>Noise Level: N/A</string>
          </property>
         </widget>
        </item>
-       <item row="18" column="0">
-        <widget class="QLabel" name="current_health_condition">
+       <item row="3" column="0">
+        <widget class="QLabel" name="age">
          <property name="text">
-          <string>Current Health Condition</string>
+          <string>Age:</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="type_of_animal">
-         <property name="text">
-          <string>Type of Animal</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="1">
+       <item row="11" column="3">
         <widget class="QLabel" name="previous_level_of_care">
          <property name="text">
-          <string>Previous Level of Care</string>
+          <string>Previous Level of Care: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="3">
+        <widget class="QLabel" name="medical_history">
+         <property name="text">
+          <string>Medical History: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="2">
+        <widget class="QLabel" name="level_of_care_needed">
+         <property name="text">
+          <string>Level of Care Needed: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="20" column="0">
+        <widget class="QLabel" name="current_health_condition">
+         <property name="text">
+          <string>Current Health Condition: N/A</string>
          </property>
         </widget>
        </item>
        <item row="17" column="0">
+        <widget class="QLabel" name="climate">
+         <property name="text">
+          <string>Climate: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QLabel" name="special_skill">
+         <property name="text">
+          <string>Special Skill:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="colour">
+         <property name="text">
+          <string>Colour:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="19" column="0">
         <widget class="QLabel" name="neatness">
          <property name="text">
-          <string>Neatness</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="0">
-        <widget class="QLabel" name="prone_to_disease">
-         <property name="text">
-          <string>Prone to Disease</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLabel" name="gender">
-         <property name="text">
-          <string>Gender</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="1">
-        <widget class="QLabel" name="medical_history">
-         <property name="text">
-          <string>Medical History</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="1">
-        <widget class="QLabel" name="kid_friendly">
-         <property name="text">
-          <string>Kid friendly</string>
+          <string>Neatness: N/A</string>
          </property>
         </widget>
        </item>
        <item row="11" column="0">
-        <widget class="QLabel" name="bad_habits">
+        <widget class="QLabel" name="temperament">
          <property name="text">
-          <string>Bad habits</string>
+          <string>Temperament: N/A</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="name">
          <property name="text">
-          <string>Name</string>
+          <string>Name:</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="colour">
-         <property name="text">
-          <string>Colour</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="age">
-         <property name="text">
-          <string>Age</string>
-         </property>
-        </widget>
-       </item>
-       <item row="15" column="0">
-        <widget class="QLabel" name="climate">
-         <property name="text">
-          <string>Climate</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="breed">
-         <property name="text">
-          <string>Breed</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QLabel" name="temperament">
-         <property name="text">
-          <string>Temperament</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QLabel" name="weight">
-         <property name="text">
-          <string>Weight</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
+       <item row="8" column="3">
         <widget class="QLabel" name="energy_level">
          <property name="text">
-          <string>Energy Level</string>
+          <string>Energy Level: N/A</string>
          </property>
         </widget>
        </item>
-       <item row="13" column="1">
+       <item row="12" column="0">
+        <widget class="QLabel" name="gender">
+         <property name="text">
+          <string>Gender:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="2">
+        <widget class="QLabel" name="bad_habits">
+         <property name="text">
+          <string>Bad habits: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="3">
+        <widget class="QLabel" name="prone_to_disease">
+         <property name="text">
+          <string>Prone to Disease: N/A</string>
+         </property>
+        </widget>
+       </item>
+       <item row="21" column="0">
         <widget class="QLabel" name="living_space_needed">
          <property name="text">
-          <string>Living Space Needed</string>
-         </property>
-        </widget>
-       </item>
-       <item row="15" column="1">
-        <widget class="QLabel" name="level_of_care_needed">
-         <property name="text">
-          <string>Level of Care Needed</string>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="1">
-        <widget class="QLabel" name="intelligence_level">
-         <property name="text">
-          <string>Intelligence Level</string>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="0">
-        <widget class="QLabel" name="difficulty_to_train">
-         <property name="text">
-          <string>Difficulty to Train</string>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="1">
-        <widget class="QLabel" name="feeding_cost">
-         <property name="text">
-          <string>Feeding Cost</string>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="0">
-        <widget class="QLabel" name="noise_level">
-         <property name="text">
-          <string>Noise Level</string>
+          <string>Living Space Needed: N/A</string>
          </property>
         </widget>
        </item>

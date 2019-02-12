@@ -55,7 +55,6 @@ void HomeView::on_listWidgetAnimal_itemDoubleClicked(QListWidgetItem *item)
     qDebug("Animal Selected at index: %d", item->listWidget()->currentRow());
     AnimalProfileDialog aprofile;
     aprofile.setModal(true);
-    aprofile.animal = animals->get(item->listWidget()->currentRow());
     aprofile.exec();
 }
 
