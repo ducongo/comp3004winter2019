@@ -52,9 +52,9 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="label_17">
+        <widget class="QLabel" name="email">
          <property name="text">
-          <string>Special Skill</string>
+          <string>Email</string>
          </property>
         </widget>
        </item>
@@ -66,9 +66,9 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="label_19">
+        <widget class="QLabel" name="home_phone">
          <property name="text">
-          <string>Type of Animal</string>
+          <string>Home Phone</string>
          </property>
         </widget>
        </item>
@@ -94,9 +94,9 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QLabel" name="label_18">
+        <widget class="QLabel" name="desired_animal">
          <property name="text">
-          <string>Gender</string>
+          <string>Desired Animal</string>
          </property>
         </widget>
        </item>
@@ -122,16 +122,16 @@
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="name">
          <property name="text">
           <string>Name</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLabel" name="label_14">
+        <widget class="QLabel" name="home_address">
          <property name="text">
-          <string>Colour</string>
+          <string>Home Address</string>
          </property>
         </widget>
        </item>
@@ -150,9 +150,9 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="label_15">
+        <widget class="QLabel" name="cell_phone">
          <property name="text">
-          <string>Breed</string>
+          <string>Cell Phone</string>
          </property>
         </widget>
        </item>
