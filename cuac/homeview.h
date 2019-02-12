@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QListWidgetItem>
+#include "animal.h"
+#include "array.h"
 
 namespace Ui {
 class HomeView;
@@ -15,6 +17,7 @@ class HomeView : public QMainWindow
 public:
     explicit HomeView(QWidget *parent = 0);
     ~HomeView();
+    Array<Animal>* animals;
 
 private slots:
     void on_runACMButton_clicked();
@@ -26,6 +29,8 @@ private slots:
     void on_addAnimal_clicked();
 
     void on_addClient_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::HomeView *ui;

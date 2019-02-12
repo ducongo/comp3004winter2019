@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="name">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -23,7 +23,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="specie">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -33,7 +33,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="breed">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -43,7 +43,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="colour">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -53,7 +53,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
+  <widget class="QLineEdit" name="skill">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -63,41 +63,31 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_6">
+  <widget class="QLineEdit" name="age">
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>270</y>
+     <y>280</y>
      <width>501</width>
      <height>25</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_7">
+  <widget class="QLineEdit" name="weight">
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>310</y>
+     <y>320</y>
      <width>501</width>
      <height>25</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_8">
+  <widget class="QLineEdit" name="height">
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>350</y>
-     <width>501</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_9">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>390</y>
+     <y>360</y>
      <width>501</width>
      <height>25</height>
     </rect>
@@ -121,7 +111,7 @@
     <rect>
      <x>20</x>
      <y>110</y>
-     <width>64</width>
+     <width>111</width>
      <height>17</height>
     </rect>
    </property>
@@ -160,7 +150,7 @@
     <rect>
      <x>20</x>
      <y>230</y>
-     <width>64</width>
+     <width>91</width>
      <height>17</height>
     </rect>
    </property>
@@ -168,24 +158,11 @@
     <string>Special Skill:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>270</y>
-     <width>64</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Gender:</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>310</y>
+     <y>280</y>
      <width>64</width>
      <height>17</height>
     </rect>
@@ -198,7 +175,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>350</y>
+     <y>320</y>
      <width>64</width>
      <height>17</height>
     </rect>
@@ -211,7 +188,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>390</y>
+     <y>360</y>
      <width>64</width>
      <height>17</height>
     </rect>
@@ -237,7 +214,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>470</y>
+     <y>440</y>
      <width>83</width>
      <height>25</height>
     </rect>

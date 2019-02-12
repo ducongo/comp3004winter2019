@@ -27,7 +27,7 @@
      <enum>QTabWidget::West</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tabanimalTab">
      <attribute name="title">
@@ -49,6 +49,13 @@
           <widget class="QPushButton" name="addAnimal">
            <property name="text">
             <string>ADD ANIMAL</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="text">
+            <string>Reload</string>
            </property>
           </widget>
          </item>

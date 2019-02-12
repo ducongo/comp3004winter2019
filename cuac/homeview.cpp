@@ -19,11 +19,11 @@ HomeView::HomeView(QWidget *parent) :
     ui->listWidgetClient->setResizeMode(QListWidget::Adjust);
 
 
-    for (int i = 0; i < 200; i++){
+    for (int i = 0; i < animals->getSize(); i++){
 
         QString path = ":/img/images/pet.png";
 
-        QListWidgetItem *item = new QListWidgetItem(QIcon(path), QString("FirstName " + QString::number(i) + "\n Dog"));
+        QListWidgetItem *item = new QListWidgetItem(QIcon(path), QString::fromStdString(animals->get(i)->getName() + "\n " + animals->get(i)->getBreed()));
 
         ui->listWidgetAnimal->addItem(item);
 
@@ -55,6 +55,7 @@ void HomeView::on_listWidgetAnimal_itemDoubleClicked(QListWidgetItem *item)
     qDebug("Animal Selected at index: %d", item->listWidget()->currentRow());
     AnimalProfileDialog aprofile;
     aprofile.setModal(true);
+    aprofile.animal = animals->get(item->listWidget()->currentRow());
     aprofile.exec();
 }
 
@@ -72,6 +73,7 @@ void HomeView::on_addAnimal_clicked()
 {
     qDebug("Adding animal");
     AddAnimalDialog d;
+    d.animals = animals;
     d.setModal(true);
     d.exec();
 }
@@ -79,4 +81,23 @@ void HomeView::on_addAnimal_clicked()
 void HomeView::on_addClient_clicked()
 {
     qDebug("Adding animal");
+}
+
+void HomeView::on_pushButton_clicked()
+{
+
+    int iNum = ui->listWidgetAnimal->count();
+    for (int j = 0; j < iNum; j++){
+        delete (ui->listWidgetAnimal->takeItem(0));
+    }
+
+    for (int i = 0; i < animals->getSize(); i++){
+
+        QString path = ":/img/images/pet.png";
+
+        QListWidgetItem *item = new QListWidgetItem(QIcon(path), QString::fromStdString(animals->get(i)->getName() + "\n " + animals->get(i)->getBreed()));
+
+        ui->listWidgetAnimal->addItem(item);
+
+     }
 }

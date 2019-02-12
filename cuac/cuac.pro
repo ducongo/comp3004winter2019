@@ -31,7 +31,11 @@ SOURCES += \
     clientprofiledialog.cpp \
     clientprofileeditdialog.cpp \
     database.cpp \
-    addanimaldialog.cpp
+    addanimaldialog.cpp \
+    animal.cpp \
+    list.cpp \
+    staff.cpp \
+    array.cpp
 
 HEADERS += \
         homeview.h \
@@ -42,12 +46,13 @@ HEADERS += \
     database.h \
     datatypes.h \
     addanimaldialog.h \
-    ../../../Downloads/Animal.h \
-    ../../../Downloads/Attribute.h \
-    ../../../Downloads/control.h \
-    ../../../Downloads/List.h \
-    ../../../Downloads/Staff.h \
-    ../../../Downloads/Staff_copy.h
+    ../../../Downloads/Staff_copy.h \
+    animal.h \
+    attribute.h \
+    control.h \
+    list.h \
+    staff.h \
+    array.h
 
 FORMS += \
         homeview.ui \
