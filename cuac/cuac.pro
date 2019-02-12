@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,14 +29,18 @@ SOURCES += \
     animalprofiledialog.cpp \
     animalprofileeditdialog.cpp \
     clientprofiledialog.cpp \
-    clientprofileeditdialog.cpp
+    clientprofileeditdialog.cpp \
+    database.cpp \
+    datastructs.cpp
 
 HEADERS += \
         homeview.h \
     animalprofiledialog.h \
     animalprofileeditdialog.h \
     clientprofiledialog.h \
-    clientprofileeditdialog.h
+    clientprofileeditdialog.h \
+    database.h \
+    datatypes.h
 
 FORMS += \
         homeview.ui \
