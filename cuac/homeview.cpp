@@ -2,6 +2,7 @@
 #include "ui_homeview.h"
 #include "animalprofiledialog.h"
 #include "clientprofiledialog.h"
+#include "addanimaldialog.h"
 
 
 HomeView::HomeView(QWidget *parent) :
@@ -70,6 +71,9 @@ void HomeView::on_listWidgetClient_itemDoubleClicked(QListWidgetItem *item)
 void HomeView::on_addAnimal_clicked()
 {
     qDebug("Adding animal");
+    AddAnimalDialog d;
+    d.setModal(true);
+    d.exec();
 }
 
 void HomeView::on_addClient_clicked()
