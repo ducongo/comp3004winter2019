@@ -18,7 +18,8 @@ Animal::Animal(string Name,string Species,string Breed,int Age,int Weight,int He
                int Intelligence_level,
                int Difficulty_to_train,
                int Noise_level,
-               int Temperament)
+               int Temperament,
+               int Bad_habits)
 {
   name = Name;
   species = Species;
@@ -43,6 +44,7 @@ Animal::Animal(string Name,string Species,string Breed,int Age,int Weight,int He
   difficulty_to_train = Difficulty_to_train;
   noise_level = Noise_level;
   temperament = Temperament;
+  bad_habits = Bad_habits;
 
   //initalizeAttibutes(at);
 }

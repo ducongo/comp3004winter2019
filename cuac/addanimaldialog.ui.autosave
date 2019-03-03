@@ -76,7 +76,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Type of Animal:</string>
+    <string>Specie:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">

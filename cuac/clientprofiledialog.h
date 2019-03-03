@@ -2,6 +2,7 @@
 #define CLIENTPROFILEDIALOG_H
 
 #include <QDialog>
+#include "client.h"
 
 namespace Ui {
 class ClientProfileDialog;
@@ -14,6 +15,8 @@ class ClientProfileDialog : public QDialog
 public:
     explicit ClientProfileDialog(QWidget *parent = 0);
     ~ClientProfileDialog();
+    Client* client;
+    void loadData(Client*);
 
 private:
     Ui::ClientProfileDialog *ui;

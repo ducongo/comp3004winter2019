@@ -35,7 +35,10 @@ SOURCES += \
     animal.cpp \
     list.cpp \
     staff.cpp \
-    array.cpp
+    array.cpp \
+    viewanimaldialog.cpp \
+    client.cpp \
+    addclientdialog.cpp
 
 HEADERS += \
         homeview.h \
@@ -52,7 +55,10 @@ HEADERS += \
     control.h \
     list.h \
     staff.h \
-    array.h
+    array.h \
+    viewanimaldialog.h \
+    client.h \
+    addclientdialog.h
 
 FORMS += \
         homeview.ui \
@@ -60,7 +66,9 @@ FORMS += \
     animalprofileeditdialog.ui \
     clientprofiledialog.ui \
     clientprofileeditdialog.ui \
-    addanimaldialog.ui
+    addanimaldialog.ui \
+    viewanimaldialog.ui \
+    addclientdialog.ui
 
 QT += widgets
 

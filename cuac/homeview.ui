@@ -73,7 +73,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QLabel" name="totalAnimalLabel">
+          <widget class="QLabel" name="total">
            <property name="text">
             <string>@00 animals ready for adoption</string>
            </property>

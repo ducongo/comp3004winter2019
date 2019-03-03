@@ -118,6 +118,18 @@ AnimalData** Database::pullAnimals(){
     x = 0;
     while (query.previous()){
          animals[x]->animalName = query.value(0).toString().toUtf8().constData();
+         animals[x]->typeOfAnimal = query.value(1).toString().toUtf8().constData();
+         animals[x]->breed = query.value(2).toString().toUtf8().constData();
+         animals[x]->colour = query.value(3).toString().toUtf8().constData();
+         animals[x]->animalAttr[0] = query.value(4).toInt();
+         animals[x]->animalAttr[1] = query.value(5).toInt();
+         animals[x]->animalAttr[2] = query.value(6).toInt();
+         animals[x]->animalAttr[3] = query.value(7).toInt();
+         qDebug("*******Name: %s", QString::fromStdString(animals[x]->animalName));
+         qDebug() << QString::fromStdString(animals[x]->animalName);
+         qDebug("*******Specie: %s", QString::fromStdString(animals[x]->typeOfAnimal));
+         qDebug("*******Breed: %s", QString::fromStdString(animals[x]->breed));
+         qDebug("*******Colour: %s", QString::fromStdString(animals[x]->colour));
          x++;
     }
     animals[i] = NULL;

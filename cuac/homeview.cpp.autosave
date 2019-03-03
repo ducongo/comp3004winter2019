@@ -63,10 +63,12 @@ void HomeView::on_listWidgetAnimal_itemDoubleClicked(QListWidgetItem *item)
 
 void HomeView::on_listWidgetClient_itemDoubleClicked(QListWidgetItem *item)
 {
-    qDebug("Client Selected at index: %d", item->listWidget()->currentRow());
-    ClientProfileDialog cprofile;
-    cprofile.setModal(true);
-    cprofile.exec();
+    qDebug("Animal Selected at index: %d", item->listWidget()->currentRow());
+    ClientProfileDialog profile;
+    profile.setModal(true);
+    profile.loadData(clients->get(item->listWidget()->currentRow()));
+    //aprofile.animal = animals->get(item->listWidget()->currentRow());
+    profile.exec();
 
 
 }

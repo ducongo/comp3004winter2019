@@ -1,24 +1,22 @@
-#include "animalprofiledialog.h"
-#include "ui_animalprofiledialog.h"
-#include <string>
+#include "viewanimaldialog.h"
+#include "ui_viewanimaldialog.h"
+#include "animal.h"
 
-AnimalProfileDialog::AnimalProfileDialog(QWidget *parent) :
+ViewAnimalDialog::ViewAnimalDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::AnimalProfileDialog)
+    ui(new Ui::ViewAnimalDialog)
 {
-    qDebug("Called Function SETUPPPPPPP");
+    ui->setupUi(this);
+}
 
-//    qDebug("NAME OF ANIMAL: %s", animal->getName());
-//    ui->setupUi(this);
-//    ui->name->setText(QString::fromStdString(animal->getName()));
-//    ui->specie->setText(QString::fromStdString(animal->getSpecies()));
-//    ui->breed->setText(QString::fromStdString(animal->getBreed()));
-//    ui->age->setText(QString::fromStdString(std::to_string(animal->getAge())));
-//    ui->weight->setText(QString::fromStdString(std::to_string(animal->getWeight())));
-//    ui->height->setText(QString::fromStdString(std::to_string(animal->getHeight())));
-//    ui->colour->setText(QString::fromStdString(animal->getColour()));
-//    ui->special_skill->setText(QString::fromStdString(animal->getSkill()));
-    //std::to_string()
+ViewAnimalDialog::~ViewAnimalDialog()
+{
+    delete ui;
+}
+
+void ViewAnimalDialog::loadData(Animal* a){
+
+
     ui->name->setText(ui->name->text().append(QString::fromStdString(animal->getName())));
     ui->specie->setText(ui->specie->text().append(QString::fromStdString(animal->getSpecies())));
     ui->breed->setText(ui->breed->text().append(QString::fromStdString(animal->getBreed())));
@@ -42,11 +40,4 @@ AnimalProfileDialog::AnimalProfileDialog(QWidget *parent) :
     ui->intelligence_level->setText(ui->intelligence_level->text().append(QString::number(animal->getIntelligence_level())));
     ui->difficulty_to_train->setText(ui->difficulty_to_train->text().append(QString::number(animal->getDifficulty_to_train())));
     ui->noise_level->setText(ui->noise_level->text().append(QString::number(animal->getNoise_level())));
-
-
-}
-
-AnimalProfileDialog::~AnimalProfileDialog()
-{
-    delete ui;
 }

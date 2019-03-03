@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "animal.h"
 #include "array.h"
+#include "homeview.h"
 
 namespace Ui {
 class AddAnimalDialog;
@@ -17,6 +18,7 @@ public:
     explicit AddAnimalDialog(QWidget *parent = 0);
     ~AddAnimalDialog();
     Array<Animal>* animals;
+    HomeView *home;
 
 private slots:
     void on_pushButton_clicked();
