@@ -10,7 +10,7 @@ using namespace std;
 class Animal
 {
   public:
-    Animal(string, string, string, int, int, int, string, string/*,int[]*/, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+    Animal(string, string, string, int, int, int, string, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
     ~Animal();
 
     string getName();
@@ -41,7 +41,7 @@ class Animal
     void setHeight(int);
 
     string getColour();
-    string getSkill();
+    int getSkill();
 
     Attribute* att[17];
 
@@ -71,7 +71,7 @@ class Animal
     int bad_habits;
 
     string colour;
-    string specialSkill;
+    int specialSkill;
 
     void initalizeAttibutes(int[]);
 

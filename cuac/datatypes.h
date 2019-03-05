@@ -23,7 +23,9 @@ struct ClientData {
     string clientName;
     string clientEmail;
     string clientAddr;
-    int clientAttr [25];
+    string species;
+    string breed;
+    int clientAttr [11];
 };
 
 #endif // DATATYPES_H

@@ -5,6 +5,7 @@
 #include "client.h"
 #include "array.h"
 #include "homeview.h"
+#include "database.h"
 
 namespace Ui {
 class AddClientDialog;
@@ -19,6 +20,8 @@ public:
     ~AddClientDialog();
     Array<Client>* clients;
     HomeView *home;
+    Database* db;
+
 
 private slots:
     void on_pushButton_clicked();

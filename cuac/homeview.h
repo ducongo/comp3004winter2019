@@ -6,6 +6,7 @@
 #include "animal.h"
 #include "client.h"
 #include "array.h"
+#include "database.h"
 
 namespace Ui {
 class HomeView;
@@ -20,6 +21,8 @@ public:
     ~HomeView();
     Array<Animal>* animals;
     Array<Client>* clients;
+    Database* db123;
+    void loadArrays();
     void loadData();
 
 private slots:

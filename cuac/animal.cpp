@@ -4,7 +4,8 @@ using namespace std;
 
 #include "animal.h"
 
-Animal::Animal(string Name,string Species,string Breed,int Age,int Weight,int Height,string Colour,string Skill,
+Animal::Animal(string Name,string Species,string Breed,int Age,int Weight,int Height,string Colour,
+               int Skill,
                int Energy_level,
                int Kid_friendly,
                int Level_of_dependency,
@@ -18,7 +19,8 @@ Animal::Animal(string Name,string Species,string Breed,int Age,int Weight,int He
                int Intelligence_level,
                int Difficulty_to_train,
                int Noise_level,
-               int Temperament)
+               int Temperament,
+               int Bad_habits)
 {
   name = Name;
   species = Species;
@@ -43,6 +45,7 @@ Animal::Animal(string Name,string Species,string Breed,int Age,int Weight,int He
   difficulty_to_train = Difficulty_to_train;
   noise_level = Noise_level;
   temperament = Temperament;
+  bad_habits = Bad_habits;
 
   //initalizeAttibutes(at);
 }
@@ -73,13 +76,14 @@ int Animal::getIntelligence_level(){return intelligence_level;}
 int Animal::getDifficulty_to_train(){return difficulty_to_train;}
 int Animal::getNoise_level(){return noise_level;}
 int Animal::getTemperament(){return temperament;}
+int Animal::getBad_habits(){return bad_habits;}
 
 void Animal::setAge(int a){age = a;}
 void Animal::setWeight(int w){weight = w;}
 void Animal::setHeight(int h){height = h;}
 
 string Animal::getColour(){return colour;}
-string Animal::getSkill(){return specialSkill;}
+int Animal::getSkill(){return specialSkill;}
 
 void Animal::initalizeAttibutes(int at[]){
 

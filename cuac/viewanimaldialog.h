@@ -16,6 +16,7 @@ public:
     explicit ViewAnimalDialog(QWidget *parent = 0);
     ~ViewAnimalDialog();
     void loadData(Animal*);
+    Animal* a;
 
 private:
     Ui::ViewAnimalDialog *ui;

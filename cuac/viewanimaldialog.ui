@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>738</width>
-    <height>560</height>
+    <width>1126</width>
+    <height>594</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,189 +19,197 @@
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents_3">
+     <widget class="QWidget" name="scrollAreaWidgetContents">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>718</width>
-        <height>540</height>
+        <width>1106</width>
+        <height>574</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="2">
-        <widget class="QLabel" name="specie">
-         <property name="text">
-          <string>Specie:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="3">
-        <widget class="QLabel" name="intelligence_level">
-         <property name="text">
-          <string>Intelligence Level: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="2">
-        <widget class="QLabel" name="difficulty_to_train">
-         <property name="text">
-          <string>Difficulty to Train: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="3">
-        <widget class="QLabel" name="feeding_cost">
-         <property name="text">
-          <string>Feeding Cost: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="QLabel" name="breed">
-         <property name="text">
-          <string>Breed:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="2">
-        <widget class="QLabel" name="kid_friendly">
-         <property name="text">
-          <string>Kid friendly: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QLabel" name="weight">
-         <property name="text">
-          <string>Weight:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QLabel" name="height">
-         <property name="text">
-          <string>Height:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="2">
-        <widget class="QLabel" name="noise_level">
-         <property name="text">
-          <string>Noise Level: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="age">
-         <property name="text">
-          <string>Age:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="3">
-        <widget class="QLabel" name="previous_level_of_care">
-         <property name="text">
-          <string>Previous Level of Care: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="3">
-        <widget class="QLabel" name="medical_history">
-         <property name="text">
-          <string>Medical History: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="2">
-        <widget class="QLabel" name="level_of_care_needed">
-         <property name="text">
-          <string>Level of Care Needed: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="0">
-        <widget class="QLabel" name="current_health_condition">
-         <property name="text">
-          <string>Current Health Condition: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="0">
-        <widget class="QLabel" name="climate">
-         <property name="text">
-          <string>Climate: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="2">
-        <widget class="QLabel" name="special_skill">
-         <property name="text">
-          <string>Special Skill:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="colour">
-         <property name="text">
-          <string>Colour:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="0">
-        <widget class="QLabel" name="neatness">
-         <property name="text">
-          <string>Neatness: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
-        <widget class="QLabel" name="temperament">
-         <property name="text">
-          <string>Temperament: N/A</string>
-         </property>
-        </widget>
-       </item>
+      <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QLabel" name="name">
-         <property name="text">
-          <string>Name:</string>
+        <widget class="QScrollArea" name="scrollArea_2">
+         <property name="widgetResizable">
+          <bool>true</bool>
          </property>
-        </widget>
-       </item>
-       <item row="8" column="3">
-        <widget class="QLabel" name="energy_level">
-         <property name="text">
-          <string>Energy Level: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="0">
-        <widget class="QLabel" name="gender">
-         <property name="text">
-          <string>Gender:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="2">
-        <widget class="QLabel" name="bad_habits">
-         <property name="text">
-          <string>Bad habits: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="3">
-        <widget class="QLabel" name="prone_to_disease">
-         <property name="text">
-          <string>Prone to Disease: N/A</string>
-         </property>
-        </widget>
-       </item>
-       <item row="21" column="0">
-        <widget class="QLabel" name="living_space_needed">
-         <property name="text">
-          <string>Living Space Needed: N/A</string>
-         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_3">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1086</width>
+            <height>554</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="21" column="3">
+            <widget class="QLabel" name="feeding_cost">
+             <property name="text">
+              <string>Feeding Cost (expensive, moderate, cheap)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="3">
+            <widget class="QLabel" name="bad_habits">
+             <property name="text">
+              <string>Bad Habits (very bad, bad, none):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="20" column="3">
+            <widget class="QLabel" name="intelligence_level">
+             <property name="text">
+              <string>Inetelligence Level (poor, average, ineelligent)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLabel" name="colour">
+             <property name="text">
+              <string>Colour:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="0">
+            <widget class="QLabel" name="temperament">
+             <property name="text">
+              <string>Temperament (poor, good, great):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="21" column="2">
+            <widget class="QLabel" name="difficulty_to_train">
+             <property name="text">
+              <string>Difficulty to train (hard,ok, easy):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLabel" name="height">
+             <property name="text">
+              <string>Height:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="20" column="0">
+            <widget class="QLabel" name="current_health_condition">
+             <property name="text">
+              <string>Current Health Condition (poor, good):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="18" column="0">
+            <widget class="QLabel" name="climate">
+             <property name="text">
+              <string>Climate (cold, room temperature, hot):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="specie">
+             <property name="text">
+              <string>Specie:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="2">
+            <widget class="QLabel" name="kid_friendly">
+             <property name="text">
+              <string>Kid friendly (aggresive, moderate. friendly):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="18" column="3">
+            <widget class="QLabel" name="neatness">
+             <property name="text">
+              <string>Neatness (dirty, neat, extremely neat)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="3">
+            <widget class="QLabel" name="prone_to_disease">
+             <property name="text">
+              <string>Prone to Disease (FALSE, TRUE)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="18" column="2">
+            <widget class="QLabel" name="level_of_care_needed">
+             <property name="text">
+              <string>Level of Care (none, moderate, extreme):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLabel" name="age">
+             <property name="text">
+              <string>Age:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="20" column="2">
+            <widget class="QLabel" name="noise_level">
+             <property name="text">
+              <string>Noise Level (Noisy, moderate, calm):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="name">
+             <property name="text">
+              <string>Name:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" rowspan="4">
+            <widget class="QWidget" name="image" native="true"/>
+           </item>
+           <item row="13" column="2">
+            <widget class="QLabel" name="level_of_dependency">
+             <property name="text">
+              <string>Level of Dependency (30mins, 1-2 hours, 3+ hours):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QLabel" name="special_skill">
+             <property name="text">
+              <string>Special Skill:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="breed">
+             <property name="text">
+              <string>Breed:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="0">
+            <widget class="QLabel" name="energy_level">
+             <property name="text">
+              <string>Energy Level (low, medium, high):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="weight">
+             <property name="text">
+              <string>Weight:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="21" column="0">
+            <widget class="QLabel" name="living_space_needed">
+             <property name="text">
+              <string>Living Space Needed (small, medium, big):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -210,6 +218,10 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

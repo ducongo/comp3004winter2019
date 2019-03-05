@@ -29,44 +29,44 @@ string Client::getAddress(){return address;}
 int Client::getCellPhone(){return cellPhone;}
 int Client::getHomePhone(){return homePhone;}
 
-int Client::getAnimal();
-int Client::getBreed();
-int Client::getSpecialRequriements();
+int Client::getAnimal(){return 0;}
+int Client::getBreed(){return 0;}
+int Client::getSpecialRequriements(){return 0;}
 
 int Client::getAge(){return age;}
 int Client::getGender(){return gender;}
-int Client::getEconomicBackground();
-int Client::getActivityLevel();
-int Client::getExperienceWithAnimals();
-int Client::getLevelOfPatience();
-int Client::getHouseSize();
-int Client::getAvailableTime();
-int Client::getStrength();
+int Client::getEconomicBackground(){return 0;}
+int Client::getActivityLevel(){return 0;}
+int Client::getExperienceWithAnimals(){return 0;}
+int Client::getLevelOfPatience(){return 0;}
+int Client::getHouseSize(){return 0;}
+int Client::getAvailableTime(){return 0;}
+int Client::getStrength(){return 0;}
 
-void Client::setName();
-void Client::setEmail();
-void Client::setAddress();
+void Client::setName(){}
+void Client::setEmail(){}
+void Client::setAddress(){}
 
-void Client::setCellPhone();
-void Client::setHomePhone();
+void Client::setCellPhone(){}
+void Client::setHomePhone(){}
 
-void Client::setAnimal();
-void Client::setBreed();
-void Client::setSpecialRequriements();
+void Client::setAnimal(){}
+void Client::setBreed(){}
+void Client::setSpecialRequriements(){}
 
-void setAge();
-void setGender();
-void setEconomicBackground();
-void setActivityLevel();
-void setExperienceWithAnimals();
-void setLevelOfPatience();
-void setHouseSize();
-void setAvailableTime();
-void setStrength();
+void Client::setAge(){}
+void Client::setGender(){}
+void Client::setEconomicBackground(){}
+void Client::setActivityLevel(){}
+void Client::setExperienceWithAnimals(){}
+void Client::setLevelOfPatience(){}
+void Client::setHouseSize(){}
+void Client::setAvailableTime(){}
+void Client::setStrength(){}
 
 Attribute* att[17];
 
-void Animal::initalizeAttibutes(int at[]){
+void Client::initalizeAttibutes(int at[]){
 
   /*att[0] = new Attibute("Energy Level",at[0],0,"(1-Enegitic,2-Typical,3-Slugish)");
   att[1] = new Attibute("Temperament",at[1],0,"(1-Agressive,2-Typical,3-Calm)");

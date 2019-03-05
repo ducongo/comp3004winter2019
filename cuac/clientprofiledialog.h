@@ -15,7 +15,7 @@ class ClientProfileDialog : public QDialog
 public:
     explicit ClientProfileDialog(QWidget *parent = 0);
     ~ClientProfileDialog();
-    Client* client;
+    Client* c;
     void loadData(Client*);
 
 private:

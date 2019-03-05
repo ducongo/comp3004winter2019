@@ -7,6 +7,7 @@ ViewAnimalDialog::ViewAnimalDialog(QWidget *parent) :
     ui(new Ui::ViewAnimalDialog)
 {
     ui->setupUi(this);
+    ui->image->setStyleSheet("background-image: url(:/img/images/pet.png)");
 }
 
 ViewAnimalDialog::~ViewAnimalDialog()
@@ -14,7 +15,7 @@ ViewAnimalDialog::~ViewAnimalDialog()
     delete ui;
 }
 
-void ViewAnimalDialog::loadData(Animal* a){
+void ViewAnimalDialog::loadData(Animal* animal){
 
 
     ui->name->setText(ui->name->text().append(QString::fromStdString(animal->getName())));

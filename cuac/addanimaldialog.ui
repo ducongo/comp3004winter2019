@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>931</width>
+    <width>965</width>
     <height>627</height>
    </rect>
   </property>
@@ -76,7 +76,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Type of Animal:</string>
+    <string>Specie:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -110,12 +110,12 @@
     <rect>
      <x>20</x>
      <y>230</y>
-     <width>121</width>
+     <width>561</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Special Skill ():</string>
+    <string>Special Skill (1-Seeying eye, 2-Drug sniffing, 3-Hunting, 4-Security, 5-Showing):</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
@@ -173,7 +173,7 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>360</x>
+     <x>410</x>
      <y>580</y>
      <width>83</width>
      <height>25</height>
@@ -192,11 +192,14 @@
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>0</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>20</number>
    </property>
    <property name="value">
-    <number>2</number>
+    <number>1</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="weight">
@@ -208,11 +211,14 @@
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>500</number>
    </property>
    <property name="value">
-    <number>2</number>
+    <number>1</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="height">
@@ -224,11 +230,14 @@
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>0</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>120</number>
    </property>
    <property name="value">
-    <number>2</number>
+    <number>12</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_11">
@@ -236,18 +245,18 @@
     <rect>
      <x>20</x>
      <y>310</y>
-     <width>241</width>
+     <width>331</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Energy Level (low, medium, high):</string>
+    <string>Energy Level (1-low, 2-medium, 3-high):</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="energy_level">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>460</x>
      <y>310</y>
      <width>50</width>
      <height>26</height>
@@ -268,25 +277,28 @@
     <rect>
      <x>20</x>
      <y>340</y>
-     <width>241</width>
+     <width>351</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Temperament (poor, good, great):</string>
+    <string>Temperament (1-poor, 2-good, 3-great):</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="temperament">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>460</x>
      <y>340</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -295,14 +307,17 @@
   <widget class="QSpinBox" name="level_of_dependency">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>460</x>
      <y>400</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -313,12 +328,12 @@
     <rect>
      <x>20</x>
      <y>370</y>
-     <width>331</width>
+     <width>361</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Kid friendly (aggresive, moderate. friendly)</string>
+    <string>Kid friendly (1-aggresive, 2-moderate. 3-friendly):</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_14">
@@ -326,25 +341,28 @@
     <rect>
      <x>20</x>
      <y>400</y>
-     <width>371</width>
+     <width>431</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Level of Dependency (30mins, 1-2 hours, 3+ hours)</string>
+    <string>Level of Dependency ((1)-30mins, (2)1-2 hours, (3)3+ hours):</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="kid_friendly">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>460</x>
      <y>370</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -355,25 +373,28 @@
     <rect>
      <x>20</x>
      <y>430</y>
-     <width>241</width>
+     <width>321</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Prone to Disease (FALSE, TRUE)</string>
+    <string>Prone to Disease (1-FALSE, 2-TRUE):</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="living_space_required">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>460</x>
      <y>460</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -382,11 +403,14 @@
   <widget class="QSpinBox" name="prone_to_disease">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>460</x>
      <y>430</y>
      <width>50</width>
      <height>26</height>
     </rect>
+   </property>
+   <property name="minimum">
+    <number>1</number>
    </property>
    <property name="maximum">
     <number>2</number>
@@ -400,25 +424,28 @@
     <rect>
      <x>20</x>
      <y>460</y>
-     <width>301</width>
+     <width>381</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Living Space Needed (small, medium, big)</string>
+    <string>Living Space Needed (1-small, 2-medium, 3-large):</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="level_of_care">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>900</x>
      <y>340</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -427,24 +454,27 @@
   <widget class="QLabel" name="label_17">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>520</x>
      <y>370</y>
      <width>331</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Neatness (dirty, neat, extremely neat)</string>
+    <string>Neatness (1-dirty, 2-neat, 3-extremely neat)</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="current_health_condition">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>900</x>
      <y>400</y>
      <width>50</width>
      <height>26</height>
     </rect>
+   </property>
+   <property name="minimum">
+    <number>1</number>
    </property>
    <property name="maximum">
     <number>2</number>
@@ -456,14 +486,17 @@
   <widget class="QSpinBox" name="difficulty_to_train">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>900</x>
      <y>460</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -472,14 +505,17 @@
   <widget class="QSpinBox" name="neatness">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>900</x>
      <y>370</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -488,53 +524,56 @@
   <widget class="QLabel" name="label_18">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>520</x>
      <y>460</y>
      <width>301</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Difficulty to train (hard,ok, easy)</string>
+    <string>Difficulty to train (1-hard, 2-ok, 3-easy):</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_19">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>520</x>
      <y>310</y>
-     <width>281</width>
+     <width>321</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Climate (cold, room temperature, hot)</string>
+    <string>Climate (1-cold, 2-room temperature, 3-hot)</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_20">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>520</x>
      <y>340</y>
-     <width>291</width>
+     <width>341</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Level of Care (none, moderate, extreme)</string>
+    <string>Level of Care (1-none, 2-moderate, 3-extreme)</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="climate">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>900</x>
      <y>310</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -543,27 +582,30 @@
   <widget class="QLabel" name="label_21">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>520</x>
      <y>400</y>
-     <width>371</width>
+     <width>361</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Current Health Condition (poor, good)</string>
+    <string>Current Health Condition (1-poor, 2-good)</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="intelligence_level">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>900</x>
      <y>430</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -572,40 +614,43 @@
   <widget class="QLabel" name="label_22">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>520</x>
      <y>430</y>
-     <width>241</width>
+     <width>381</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Inetelligence Level (poor, average, ineelligent)</string>
+    <string>Inetelligence Level (1-poor, 2-average, 3-ineelligent):</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_23">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>520</x>
      <y>490</y>
      <width>301</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Noise Level (Noisy, moderate, calm)</string>
+    <string>Noise Level (1-Noisy, 2-moderate, 3-calm):</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="feeding_cost">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>460</x>
      <y>490</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -616,25 +661,28 @@
     <rect>
      <x>20</x>
      <y>490</y>
-     <width>301</width>
+     <width>361</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Feeding Cost (expensive, moderate, cheap)</string>
+    <string>Feeding Cost (1-expensive, 2-moderate, 3-cheap):</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="noise_level">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>900</x>
      <y>490</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -643,14 +691,17 @@
   <widget class="QSpinBox" name="bad_habits">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>460</x>
      <y>520</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="value">
     <number>2</number>
@@ -666,23 +717,58 @@
     </rect>
    </property>
    <property name="text">
-    <string>Bad Habits (very bad, bad, none)</string>
+    <string>Bad Habits (1-lot, 2-few, 3-none):</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="special_skill">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>220</y>
+     <x>580</x>
+     <y>230</y>
      <width>50</width>
      <height>26</height>
     </rect>
    </property>
    <property name="maximum">
-    <number>2</number>
+    <number>5</number>
    </property>
    <property name="value">
-    <number>2</number>
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="gender">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>270</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>0</number>
+   </property>
+   <property name="maximum">
+    <number>1</number>
+   </property>
+   <property name="singleStep">
+    <number>1</number>
+   </property>
+   <property name="value">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_26">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>270</y>
+     <width>201</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Gender (0-male, 1-female):</string>
    </property>
   </widget>
  </widget>

@@ -14,11 +14,14 @@ class Database
         Database();
         int initTables();
         int pushAnimal(AnimalData);
-        void pushClient();
-        void pushStaff();
+        int updateAnimal(AnimalData);
+        int pushClient(ClientData);
+        int updateClient(ClientData);
+        int pushStaff(StaffData);
+        int initValues();
         AnimalData** pullAnimals();
-        void pullClients();
-        void pullStaffs();
+        ClientData** pullClients();
+        StaffData** pullStaff();
     private:
         QSqlDatabase db;
 
