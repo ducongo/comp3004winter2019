@@ -18,7 +18,7 @@ ClientProfileDialog::~ClientProfileDialog()
 void ClientProfileDialog::loadData(Client* client){
 
 
-    ui->setupUi(this);
+
     ui->name->setText(ui->name->text().append(QString::fromStdString(client->getName())));
     ui->email->setText(ui->email->text().append(QString::fromStdString(client->getEmail())));
     ui->address->setText(ui->address->text().append(QString::fromStdString(client->getAddress())));
@@ -26,4 +26,11 @@ void ClientProfileDialog::loadData(Client* client){
     ui->gender->setText(ui->gender->text().append(QString::number(client->getGender())));
     ui->cell_phone->setText(ui->cell_phone->text().append(QString::number(client->getCellPhone())));
     ui->home_phone->setText(ui->home_phone->text().append(QString::number(client->getHomePhone())));
+
+
 }
+
+
+
+
+

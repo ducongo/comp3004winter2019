@@ -22,6 +22,7 @@ public:
     Array<Animal>* animals;
     Array<Client>* clients;
     Database* db123;
+    int is_staff_member = 0;
     void loadArrays();
     void loadData();
 
