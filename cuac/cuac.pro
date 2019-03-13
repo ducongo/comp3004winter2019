@@ -40,7 +40,8 @@ SOURCES += \
     client.cpp \
     addclientdialog.cpp \
     logindialog.cpp \
-    erroruserdialog.cpp
+    erroruserdialog.cpp \
+    control.cpp
 
 HEADERS += \
         homeview.h \

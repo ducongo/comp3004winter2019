@@ -18,9 +18,7 @@ class AddClientDialog : public QDialog
 public:
     explicit AddClientDialog(QWidget *parent = 0);
     ~AddClientDialog();
-    Array<Client>* clients;
-    HomeView *home;
-    Database* db;
+    Control* control;
 
 
 private slots:

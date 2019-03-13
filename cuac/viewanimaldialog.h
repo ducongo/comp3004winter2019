@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "animal.h"
 
+
 namespace Ui {
 class ViewAnimalDialog;
 }

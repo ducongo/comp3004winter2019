@@ -4,26 +4,26 @@
 #include "client.h"
 #include <QApplication>
 #include "database.h"
+#include "control.h"
 
 
 int main(int argc, char *argv[])
 {
     Array<Animal>* animals = new Array<Animal>();
     Array<Client>* clients = new Array<Client>();
+    Control* control = new Control();
 
     QApplication a(argc, argv);
 
-    //animals->dbGet();
-    Database* db123;
     HomeView w;
 
-    w.animals = animals;
-    w.clients = clients;
-    w.db123 = db123;
-    w.loadArrays();
-    w.show();
+    control->setHomeView(w);
 
-    qDebug("LAUNCHING APPLICATION");
+    control->getHomeView()->loadArrays();
+    control->getHomeView()->show();
+    //w.show();
+
+    //qDebug("LAUNCHING APPLICATION");
 
 
 

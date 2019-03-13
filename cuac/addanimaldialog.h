@@ -18,9 +18,7 @@ class AddAnimalDialog : public QDialog
 public:
     explicit AddAnimalDialog(QWidget *parent = 0);
     ~AddAnimalDialog();
-    Array<Animal>* animals;
-    HomeView *home;
-    Database* db;
+    Control* control;
 
 private slots:
     void on_pushButton_clicked();

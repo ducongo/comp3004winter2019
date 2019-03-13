@@ -19,9 +19,7 @@ class HomeView : public QMainWindow
 public:
     explicit HomeView(QWidget *parent = 0);
     ~HomeView();
-    Array<Animal>* animals;
-    Array<Client>* clients;
-    Database* db123;
+    Control* control;
     int is_staff_member = 0;
     void loadArrays();
     void loadData();
