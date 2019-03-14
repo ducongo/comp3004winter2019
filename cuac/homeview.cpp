@@ -9,6 +9,8 @@
 #include "erroruserdialog.h"
 
 
+
+
 HomeView::HomeView(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::HomeView)
@@ -64,7 +66,7 @@ void HomeView::on_listWidgetClient_itemDoubleClicked(QListWidgetItem *item)
         qDebug("Animal Selected at index: %d", item->listWidget()->currentRow());
         ClientProfileDialog profile;
         profile.setModal(true);
-        profile.loadData(control->getAnimal(item->listWidget()->currentRow()));
+        profile.loadData(control->getClient(item->listWidget()->currentRow()));
         //aprofile.animal = animals->get(item->listWidget()->currentRow());
         profile.exec();
     }else{
@@ -137,7 +139,7 @@ void HomeView::loadData()
         delete (ui->listWidgetAnimal->takeItem(0));
     }
 
-    for (int i = 0; i < animals->getSize(); i++){
+    for (int i = 0; i < control->getAnimalArraySize(); i++){
 
         QString path = ":/img/images/pet.png";
 
@@ -152,11 +154,11 @@ void HomeView::loadData()
         delete (ui->listWidgetClient->takeItem(0));
     }
 
-    for (int i = 0; i < clients->getSize(); i++){
+    for (int i = 0; i < control->getClientArraySize(); i++){
 
         QString path = ":/img/images/client.png";
 
-        QListWidgetItem *item = new QListWidgetItem(QIcon(path), QString::fromStdString(control->Client(i)->getName()));
+        QListWidgetItem *item = new QListWidgetItem(QIcon(path), QString::fromStdString(control->getClient(i)->getName()));
 
         ui->listWidgetClient->addItem(item);
 

@@ -1,4 +1,5 @@
 #include "control.h"
+#include "homeview.h"
 
 
 
@@ -102,7 +103,7 @@ void Control:: populateAnimalArray(){
     }
 }
 
-void Control:: populateAnimalArray(){
+void Control:: populateClientArray(){
     db->initTables();
 
     ClientData** cLists = db->pullClients();
@@ -121,7 +122,7 @@ void Control:: populateAnimalArray(){
 }
 
 int Control::getAnimalArraySize(){return animals->getSize();}
-int Control::getAnimalClientSize(){return clients->getSize();}
+int Control::getClientArraySize(){return clients->getSize();}
 
 void Control::setHomeView(HomeView* h){home = h;}
 

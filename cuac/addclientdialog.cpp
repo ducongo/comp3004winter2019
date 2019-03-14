@@ -17,8 +17,8 @@ AddClientDialog::~AddClientDialog()
 void AddClientDialog::on_pushButton_clicked()
 {
     Client* client = new Client((ui->name->text()).toStdString(), (ui->email->text()).toStdString(), (ui->address->text()).toStdString(), (ui->age->text()).toInt(), (ui->gender->text()).toInt(), (ui->cell_phone->text()).toInt(), (ui->home_phone->text()).toInt());
-    control.addClient(client);
+    control->addClient(client);
 
-    home->loadData();
+    control->getHomeView()->loadData();
     AddClientDialog::close();
 }

@@ -7,6 +7,7 @@
 #include "client.h"
 #include "array.h"
 #include "database.h"
+#include "control.h"
 
 namespace Ui {
 class HomeView;

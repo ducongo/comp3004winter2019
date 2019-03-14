@@ -42,10 +42,11 @@ void AddAnimalDialog::on_pushButton_clicked()
                            , (ui->temperament->text()).toInt()
                            , (ui->bad_habits->text()).toInt());
 
-    control->addAnimall(a);
+    control->addAnimal(a);
 
     //animals->add(a);
-    home->loadData();
+    control->getHomeView()->loadData();
+
     AddAnimalDialog::close();
 }
 

@@ -7,7 +7,8 @@
 #include "client.h"
 #include "array.h"
 #include "database.h"
-#include "homeview.h"
+
+class HomeView;
 
 
 using namespace std;
@@ -23,17 +24,17 @@ class Control
     void updateAnimal(Animal*);
     void upDateClient(Client*);
 
-    Animal* getAnimal();
-    Client* getClient();
+    Animal* getAnimal(int);
+    Client* getClient(int);
     HomeView* getHomeView();
 
     void populateAnimalArray();
     void populateClientArray();
 
     int getAnimalArraySize();
-    int getAnimalClientSize();
+    int getClientArraySize();
 
-    void setHomeView();
+    void setHomeView(HomeView*);
 
 
 
@@ -45,7 +46,7 @@ class Control
     Array<Animal>* animals;
     Array<Client>* clients;
     Database* db;
-    HomeView *home;
+    HomeView* home;
 
 
 };

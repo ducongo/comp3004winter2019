@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
     HomeView w;
 
-    control->setHomeView(w);
+    control->setHomeView(&w);
 
     control->getHomeView()->loadArrays();
     control->getHomeView()->show();
