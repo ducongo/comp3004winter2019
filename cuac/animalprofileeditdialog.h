@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "animal.h"
+#include "control.h"
 
 namespace Ui {
 class AnimalProfileEditDialog;
@@ -17,7 +18,11 @@ public:
     ~AnimalProfileEditDialog();
     void on_pushButton_clicked();
     Animal* animal;
+    Control* control;
     void loadData(Animal*);
+
+private slots:
+    void on_update_clicked();
 
 private:
     Ui::AnimalProfileEditDialog *ui;

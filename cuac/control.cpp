@@ -113,17 +113,17 @@ void Control:: populateClientArray(){
 
     ClientData** cLists = db->pullClients();
 
-    int x = 0;
-    while(cLists[x] != NULL){
+//    int x = 0;
+//    while(cLists[x] != NULL){
 
-        Client *c = new Client(cLists[x]->clientName, cLists[x]->clientEmail,
-                              cLists[x]->clientAddr, cLists[x]->clientAttr[2],
-                              cLists[x]->clientAttr[3], cLists[x]->clientAttr[1],
-                              cLists[x]->clientAttr[0]);
+//        Client *c = new Client(cLists[x]->clientName, cLists[x]->clientEmail,
+//                              cLists[x]->clientAddr, cLists[x]->clientAttr[2],
+//                              cLists[x]->clientAttr[3], cLists[x]->clientAttr[1],
+//                              cLists[x]->clientAttr[0]);
 
-        clients->add(c);
-        x++;
-    }
+//        clients->add(c);
+//        x++;
+//    }
 }
 
 int Control::getAnimalArraySize(){return animals->getSize();}

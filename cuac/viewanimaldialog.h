@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "animal.h"
+#include "control.h"
 
 
 namespace Ui {
@@ -17,7 +18,9 @@ public:
     explicit ViewAnimalDialog(QWidget *parent = 0);
     ~ViewAnimalDialog();
     void loadData(Animal*);
+    void resetLabels();
     Animal* a;
+    Control* control;
 
 private slots:
     void on_update_button_clicked();

@@ -74,3 +74,34 @@ void AnimalProfileEditDialog::on_pushButton_clicked()
 {
     AnimalProfileEditDialog::close();
 }
+
+void AnimalProfileEditDialog::on_update_clicked()
+{
+    animal->setName((ui->name->text()).toStdString());
+    animal->setSpecies((ui->specie->text()).toStdString());
+    animal->setBreed((ui->breed->text()).toStdString());
+
+    animal->setAge((ui->age->text()).toInt());
+    animal->setWeight((ui->weight->text()).toInt());
+    animal->setHeight((ui->height->text()).toInt());
+    animal->setEnergy_level((ui->energy_level->text()).toInt());
+    animal->setKid_friendly((ui->kid_friendly->text()).toInt());
+    animal->setLevel_of_dependency((ui->level_of_dependency->text()).toInt());
+    animal->setProne_to_disease((ui->prone_to_disease->text()).toInt());
+    animal->setLiving_space((ui->living_space_required->text()).toInt());
+    animal->setFeeding_cost((ui->feeding_cost->text()).toInt());
+    animal->setClimate((ui->climate->text()).toInt());
+    animal->setLevel_of_care((ui->level_of_care->text()).toInt());
+    animal->setNeatness((ui->neatness->text()).toInt());
+    animal->setCurrent_health_condition((ui->current_health_condition->text()).toInt());
+    animal->setIntelligence_level((ui->intelligence_level->text()).toInt());
+    animal->setDifficulty_to_train((ui->difficulty_to_train->text()).toInt());
+    animal->setNoise_level((ui->noise_level->text()).toInt());
+    animal->setTemperament((ui->temperament->text()).toInt());
+    animal->setBad_habits((ui->bad_habits->text()).toInt());
+
+    animal->setColour((ui->colour->text()).toStdString());
+    animal->setSkill((ui->special_skill->text()).toInt());
+    control->updateAnimal(animal);
+    AnimalProfileEditDialog::close();
+}

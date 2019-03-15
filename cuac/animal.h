@@ -36,12 +36,34 @@ class Animal
     int getTemperament();
     int getBad_habits();
 
+    string getColour();
+    int getSkill();
+
+    void setName(string);
+    void setSpecies(string);
+    void setBreed(string);
+
     void setAge(int);
     void setWeight(int);
     void setHeight(int);
+    void setEnergy_level(int);
+    void setKid_friendly(int);
+    void setLevel_of_dependency(int);
+    void setProne_to_disease(int);
+    void setLiving_space(int);
+    void setFeeding_cost(int);
+    void setClimate(int);
+    void setLevel_of_care(int);
+    void setNeatness(int);
+    void setCurrent_health_condition(int);
+    void setIntelligence_level(int);
+    void setDifficulty_to_train(int);
+    void setNoise_level(int);
+    void setTemperament(int);
+    void setBad_habits(int);
 
-    string getColour();
-    int getSkill();
+    void setColour(string s);
+    void setSkill(int);
 
     //Attribute* att[17];
 

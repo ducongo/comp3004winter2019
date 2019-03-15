@@ -19,6 +19,7 @@ ViewAnimalDialog::~ViewAnimalDialog()
 void ViewAnimalDialog::loadData(Animal* animal){
 
     a = animal;
+    resetLabels();
     ui->name->setText(ui->name->text().append(QString::fromStdString(animal->getName())));
     ui->specie->setText(ui->specie->text().append(QString::fromStdString(animal->getSpecies())));
     ui->breed->setText(ui->breed->text().append(QString::fromStdString(animal->getBreed())));
@@ -44,6 +45,32 @@ void ViewAnimalDialog::loadData(Animal* animal){
     ui->noise_level->setText(ui->noise_level->text().append(QString::number(animal->getNoise_level())));
 }
 
+void ViewAnimalDialog::resetLabels(){
+    ui->name->setText("Name: ");
+    ui->specie->setText("Specie: ");
+    ui->breed->setText("Breed: ");
+    ui->colour->setText("Colour: ");
+    ui->special_skill->setText("Special skill: ");
+    ui->age->setText("Age: ");
+    ui->weight->setText("Weight: ");
+    ui->height->setText("Height: ");
+    ui->energy_level->setText("Energy Level: ");
+    ui->temperament->setText("Temperament: ");
+    ui->kid_friendly->setText("Kid Friendly: ");
+    ui->level_of_dependency->setText("Level of Dependency: ");
+    ui->prone_to_disease->setText("Prone to Disease: ");
+    ui->living_space_needed->setText("");
+    ui->feeding_cost->setText("Feeding Cost: ");
+    ui->bad_habits->setText("Bad Habits: ");
+    ui->climate->setText("Climate: ");
+    ui->level_of_care_needed->setText("Level of Care Needed: ");
+    ui->neatness->setText("Neatness: ");
+    ui->current_health_condition->setText("Current Health Condition: ");
+    ui->intelligence_level->setText("Intellihence Level: ");
+    ui->difficulty_to_train->setText("Difficulty to Train");
+    ui->noise_level->setText("Noise Level");
+}
+
 void ViewAnimalDialog::on_update_button_clicked()
 {
     AnimalProfileEditDialog d;
@@ -51,4 +78,9 @@ void ViewAnimalDialog::on_update_button_clicked()
     d.loadData(a);
     d.setModal(true);
     d.exec();
+    qDebug("WE RETURNING TO THE CALLING DIALOG");
+
+    resetLabels();
+    loadData(a);
+
 }

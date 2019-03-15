@@ -78,12 +78,34 @@ int Animal::getNoise_level(){return noise_level;}
 int Animal::getTemperament(){return temperament;}
 int Animal::getBad_habits(){return bad_habits;}
 
-void Animal::setAge(int a){age = a;}
-void Animal::setWeight(int w){weight = w;}
-void Animal::setHeight(int h){height = h;}
-
 string Animal::getColour(){return colour;}
 int Animal::getSkill(){return specialSkill;}
+
+void Animal::setName(string s){name = s;}
+void Animal::setSpecies(string s){species = s;}
+void Animal::setBreed(string s){breed = s;}
+
+void Animal::setAge(int i){age = i;}
+void Animal::setWeight(int i){weight = i;}
+void Animal::setHeight(int i){ height = i;}
+void Animal::setEnergy_level(int i){ energy_level = i;}
+void Animal::setKid_friendly(int i){ kid_friendly = i;}
+void Animal::setLevel_of_dependency(int i){ level_of_dependency = i;}
+void Animal::setProne_to_disease(int i){ prone_to_disease = i;}
+void Animal::setLiving_space(int i){ living_space = i;}
+void Animal::setFeeding_cost(int i){ feeding_cost = i;}
+void Animal::setClimate(int i){ climate = i;}
+void Animal::setLevel_of_care(int i){ level_of_care = i;}
+void Animal::setNeatness(int i){ neatness = i;}
+void Animal::setCurrent_health_condition(int i){ current_health_condition = i;}
+void Animal::setIntelligence_level(int i){ intelligence_level = i;}
+void Animal::setDifficulty_to_train(int i){ difficulty_to_train = i;}
+void Animal::setNoise_level(int i){ noise_level = i;}
+void Animal::setTemperament(int i){ temperament = i;}
+void Animal::setBad_habits(int i){ bad_habits = i;}
+
+void Animal::setColour(string s){colour = s;}
+void Animal::setSkill(int i){ specialSkill = i;}
 
 void Animal::initalizeAttibutes(int at[]){
 
