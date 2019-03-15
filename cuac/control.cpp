@@ -9,6 +9,8 @@ Control::Control(){
     animals = new Array<Animal>();
     clients = new Array<Client>();
     db = new Database();
+    db->initTables();
+    qDebug("ANIMAL SIZE: %d", animals->getSize());
 }
 
 void Control::addAnimal(Animal* a){
@@ -69,7 +71,7 @@ Client* Control::getClient(int index){return clients->get(index);}
 
 
 void Control:: populateAnimalArray(){
-    db->initTables();
+
 
     AnimalData** aLists = db->pullAnimals();
     int x = 0;
@@ -98,13 +100,15 @@ void Control:: populateAnimalArray(){
                                aLists[x]->animalAttr[19],
                                aLists[x]->animalAttr[5],
                                aLists[x]->animalAttr[7]);
+
+
         animals->add(a);
         x++;
     }
 }
 
 void Control:: populateClientArray(){
-    db->initTables();
+
 
     ClientData** cLists = db->pullClients();
 
@@ -124,6 +128,9 @@ void Control:: populateClientArray(){
 int Control::getAnimalArraySize(){return animals->getSize();}
 int Control::getClientArraySize(){return clients->getSize();}
 
-void Control::setHomeView(HomeView* h){home = h;}
+void Control::setHomeView(HomeView* h){
+    home = h;
+    home->control = this;
+}
 
 HomeView* Control::getHomeView(){return home;}

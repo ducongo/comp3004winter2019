@@ -43,7 +43,7 @@ class Animal
     string getColour();
     int getSkill();
 
-    Attribute* att[17];
+    //Attribute* att[17];
 
   private:
 

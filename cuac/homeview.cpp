@@ -172,6 +172,7 @@ void HomeView::loadArrays(){
     control->populateAnimalArray();
     control->populateClientArray();
 
+
     loadData();
 
 }

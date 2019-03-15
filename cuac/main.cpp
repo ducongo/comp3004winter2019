@@ -9,8 +9,8 @@
 
 int main(int argc, char *argv[])
 {
-    Array<Animal>* animals = new Array<Animal>();
-    Array<Client>* clients = new Array<Client>();
+    //Array<Animal>* animals = new Array<Animal>();
+   // Array<Client>* clients = new Array<Client>();
     Control* control = new Control();
 
     QApplication a(argc, argv);
@@ -18,6 +18,8 @@ int main(int argc, char *argv[])
     HomeView w;
 
     control->setHomeView(&w);
+    control->populateAnimalArray();
+    control->populateClientArray();
 
     control->getHomeView()->loadArrays();
     control->getHomeView()->show();
