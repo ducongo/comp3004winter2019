@@ -10,6 +10,7 @@ Control::Control(){
     clients = new Array<Client>();
     db = new Database();
     db->initTables();
+    db->initValues();
     qDebug("ANIMAL SIZE: %d", animals->getSize());
 }
 

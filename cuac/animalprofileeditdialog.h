@@ -15,6 +15,7 @@ class AnimalProfileEditDialog : public QDialog
 public:
     explicit AnimalProfileEditDialog(QWidget *parent = 0);
     ~AnimalProfileEditDialog();
+    void on_pushButton_clicked();
     Animal* animal;
     void loadData(Animal*);
 

@@ -36,9 +36,13 @@ int Database::initTables(){
         qWarning() << "ERROR: " << query.lastError().text();
     }
 
-    if(!query.exec("CREATE TABLE client (name TEXT PRIMARY KEY, home TEXT, email TEXT, breed TEXT, species TEXT,"
+    if(!query.exec("CREATE TABLE client (id INTEGER PRIMARY KEY, name TEXT, home TEXT, email TEXT, breed TEXT, species TEXT,"
                    "homePhone INTEGER, mobilePhone INTEGER, age INTEGER, gender INTEGER, economicBackground INTEGER,"
-                   "activity INTEGER, experience INTEGER, patience INTEGER, house INTEGER, time INTEGER, strength INTEGER"
+                   "activity INTEGER, experience INTEGER, patience INTEGER, house INTEGER, time INTEGER, strength INTEGER,"
+                   "preferredClimate INTEGER,"
+                   "dependencyPreference INTEGER, livingPreference INTEGER, energyPreference INTEGER, "
+                   "intelligencePreference INTEGER, difficultyPreference INTEGER, "
+                   "noisePreference INTEGER, specialRequirements INTEGER"
                    ")")){
         qWarning() << "ERROR: " << query.lastError().text();
     }
@@ -64,14 +68,19 @@ int Database::pushClient(ClientData client){
     query = QSqlQuery(db2);
     qDebug("Pushing client into database.");
 
-    if(!query.prepare("INSERT INTO client VALUES(:name, :home, :email, :breed, :species,"
+    if(!query.prepare("INSERT INTO client VALUES(:id, :name, :home, :email, :breed, :species,"
                       ":homePhone, :mobilePhone, :age, :gender, :economicBackground,"
-                      ":activity, :experience, :patience, :house, :time, :strength"
+                      ":activity, :experience, :patience, :house, :time, :strength,"
+                      ":preferredClimate, :dependencyPreference, :livingPreference,"
+                      ":energyPreference, :intelligencePreference, :difficultyPreference,"
+                      ":noisePreference, :specialRequirements"
                       ")")){
+
         qWarning() << "ERROR: " << query.lastError().text();
         return(1);
     }
 
+    query.bindValue("id", client.clientId);
     query.bindValue(":name", QString::fromStdString(client.clientName));
     query.bindValue(":home", QString::fromStdString(client.clientAddr));
     query.bindValue(":email", QString::fromStdString(client.clientEmail));
@@ -88,6 +97,14 @@ int Database::pushClient(ClientData client){
     query.bindValue(":house", client.clientAttr[8]);
     query.bindValue(":time", client.clientAttr[9]);
     query.bindValue(":strength", client.clientAttr[10]);
+    query.bindValue(":preferredClimate", client.clientAttr[11]);
+    query.bindValue(":dependencyPreference", client.clientAttr[12]);
+    query.bindValue(":livingPreference", client.clientAttr[13]);
+    query.bindValue(":energyPreference", client.clientAttr[14]);
+    query.bindValue(":intelligencePreference", client.clientAttr[15]);
+    query.bindValue(":difficultyPreference", client.clientAttr[16]);
+    query.bindValue(":noisePreference", client.clientAttr[17]);
+    query.bindValue(":specialRequiremets", client.clientAttr[18]);
 
     if(!query.exec()){
         qWarning() << "ERROR: " << query.lastError().text();
@@ -238,15 +255,20 @@ int Database::updateClient(ClientData client){
     qDebug("Pushing client into database.");
 
     if(!query.prepare("UPDATE client "
-                      "SET email=:email, breed=:breed, species=:species,"
+                      "SET name:=name, email=:email, breed=:breed, species=:species,"
                       "homePhone=:homePhone, mobilePhone:mobilePhone, age=:age, gender=:gender, "
                       "economicBackground:economicBackground, activity=:activity, experience=:experience, "
-                      "patience=:patience, house=:house, time=:time, strength=:strength"
-                      "WHERE name=:name)")){
+                      "patience=:patience, house=:house, time=:time, strength=:strength,"
+                      "preferredClimate=:preferredClimate, dependencyPreference=:dependencyPreference,"
+                      "livingPreference=:livingPreference, energyPreference=:energyPreference,"
+                      "intelligencePreference=:intelligencePreference, difficultyPreference=:difficultyPreference,"
+                      "noisePreference=:noisePreference, specialRequirements=:specialRequirements"
+                      "WHERE id=:id)")){
         qWarning() << "ERROR: " << query.lastError().text();
         return(1);
     }
 
+    query.bindValue(":id", client.clientId);
     query.bindValue(":name", QString::fromStdString(client.clientName));
     query.bindValue(":home", QString::fromStdString(client.clientAddr));
     query.bindValue(":email", QString::fromStdString(client.clientEmail));
@@ -263,6 +285,14 @@ int Database::updateClient(ClientData client){
     query.bindValue(":house", client.clientAttr[8]);
     query.bindValue(":time", client.clientAttr[9]);
     query.bindValue(":strength", client.clientAttr[10]);
+    query.bindValue(":preferredClimate", client.clientAttr[11]);
+    query.bindValue(":dependencyPreference", client.clientAttr[12]);
+    query.bindValue(":livingPreference", client.clientAttr[13]);
+    query.bindValue(":energyPreference", client.clientAttr[14]);
+    query.bindValue(":intelligencePreference", client.clientAttr[15]);
+    query.bindValue(":difficultyPreference", client.clientAttr[16]);
+    query.bindValue(":noisePreference", client.clientAttr[17]);
+    query.bindValue(":specialRequirements", client.clientAttr[18]);
 
     if(!query.exec()){
         qWarning() << "ERROR: " << query.lastError().text();
@@ -357,7 +387,9 @@ ClientData** Database::pullClients(){
     qDebug("Pulling clients from database.");
     if(!query.exec("SELECT name, home, email, breed, species, homePhone, mobilePhone,"
                    "age, gender, economicBackground, activity, experience, patience, house, time,"
-                   "strength FROM client")){
+                   "strength, id , preferredClimate, dependencyPreference, livingPreference, "
+                   "energyPreference, intelligencePreference, difficultyPreference, noisePreference,"
+                   "specialRequirements FROM client")){
         qWarning() << "ERROR: " << query.lastError().text();
         query.finish();
         return NULL;
@@ -381,6 +413,7 @@ ClientData** Database::pullClients(){
          clients[x]->clientEmail     = query.value(2).toString().toUtf8().constData();
          clients[x]->breed           = query.value(3).toString().toUtf8().constData();
          clients[x]->species         = query.value(4).toString().toUtf8().constData();
+         clients[x]->clientId        = query.value(16).toInt();
          clients[x]->clientAttr[0]   = query.value(5).toInt();
          clients[x]->clientAttr[1]   = query.value(6).toInt();
          clients[x]->clientAttr[2]   = query.value(7).toInt();
@@ -392,6 +425,14 @@ ClientData** Database::pullClients(){
          clients[x]->clientAttr[8]   = query.value(13).toInt();
          clients[x]->clientAttr[9]   = query.value(14).toInt();
          clients[x]->clientAttr[10]  = query.value(15).toInt();
+         clients[x]->clientAttr[11]  = query.value(16).toInt();
+         clients[x]->clientAttr[12]  = query.value(17).toInt();
+         clients[x]->clientAttr[13]  = query.value(18).toInt();
+         clients[x]->clientAttr[14]  = query.value(19).toInt();
+         clients[x]->clientAttr[15]  = query.value(20).toInt();
+         clients[x]->clientAttr[16]  = query.value(21).toInt();
+         clients[x]->clientAttr[17]  = query.value(22).toInt();
+         clients[x]->clientAttr[18]  = query.value(23).toInt();
 
          x++;
     }
@@ -447,26 +488,32 @@ int Database::initValues(){
     client1.clientAttr[1] = 553817834;
     client1.clientAddr = "1049 Bank Street, Ottawa, Ontario";
     client1.clientEmail = "kyle@rogers.ca";
+    client1.clientId = 1;
     client2.clientName = "Parfait";
     client2.clientAttr[0] = 735647366;
     client2.clientAttr[1] = 133808184;
+    client2.clientAttr[2] = 20;
     client2.clientAddr = "4309 49 St, Yellow Knife, Nunavut";
     client2.clientEmail = "parfait@gmail.com";
+    client2.clientId = 2;
     client3.clientName = "Victor";
     client3.clientAttr[0] = 663011942;
     client3.clientAttr[1] = 884813436;
     client3.clientAddr = "381 St-Catherine St W, Montral, Quebec";
     client3.clientEmail = "victor@hotmail.com";
+    client3.clientId = 3;
     client4.clientName = "Curtis";
     client4.clientAttr[0] = 666076301;
     client4.clientAttr[1] = 888481346;
     client4.clientAddr = "601 5 St Sw, Calgary, Alberta"            ;
     client4.clientEmail = "curtis@mcgill.ca";
+    client4.clientId = 4;
     client5.clientName = "Phil";
     client5.clientAttr[0] = 502530000;
     client5.clientAttr[1] = 669956636;
     client5.clientAddr = "100 Queen St W, Toronto, Ontario";
     client5.clientEmail = "phil@cmail.carleton.ca";
+    client5.clientId = 5;
 
     animal1.animalName = "Victor";
     animal2.animalName = "Kyle";

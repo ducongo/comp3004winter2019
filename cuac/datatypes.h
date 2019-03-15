@@ -16,6 +16,7 @@ struct AnimalData {
     string breed;
     string colour;
     string specialSkill;
+    int animalId;
     int animalAttr [21];
 };
 
@@ -25,7 +26,8 @@ struct ClientData {
     string clientAddr;
     string species;
     string breed;
-    int clientAttr [11];
+    int clientId;
+    int clientAttr [20];
 };
 
 #endif // DATATYPES_H
