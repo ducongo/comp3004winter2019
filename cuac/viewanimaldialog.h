@@ -19,6 +19,9 @@ public:
     void loadData(Animal*);
     Animal* a;
 
+private slots:
+    void on_update_button_clicked();
+
 private:
     Ui::ViewAnimalDialog *ui;
 };

@@ -1,6 +1,7 @@
 #include "viewanimaldialog.h"
 #include "ui_viewanimaldialog.h"
 #include "animal.h"
+#include "animalprofileeditdialog.h"
 
 ViewAnimalDialog::ViewAnimalDialog(QWidget *parent) :
     QDialog(parent),
@@ -17,7 +18,7 @@ ViewAnimalDialog::~ViewAnimalDialog()
 
 void ViewAnimalDialog::loadData(Animal* animal){
 
-
+    a = animal;
     ui->name->setText(ui->name->text().append(QString::fromStdString(animal->getName())));
     ui->specie->setText(ui->specie->text().append(QString::fromStdString(animal->getSpecies())));
     ui->breed->setText(ui->breed->text().append(QString::fromStdString(animal->getBreed())));
@@ -41,4 +42,13 @@ void ViewAnimalDialog::loadData(Animal* animal){
     ui->intelligence_level->setText(ui->intelligence_level->text().append(QString::number(animal->getIntelligence_level())));
     ui->difficulty_to_train->setText(ui->difficulty_to_train->text().append(QString::number(animal->getDifficulty_to_train())));
     ui->noise_level->setText(ui->noise_level->text().append(QString::number(animal->getNoise_level())));
+}
+
+void ViewAnimalDialog::on_update_button_clicked()
+{
+    AnimalProfileEditDialog d;
+    d.animal = a;
+    d.loadData(a);
+    d.setModal(true);
+    d.exec();
 }

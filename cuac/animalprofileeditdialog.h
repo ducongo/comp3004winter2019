@@ -2,6 +2,7 @@
 #define ANIMALPROFILEEDITDIALOG_H
 
 #include <QDialog>
+#include "animal.h"
 
 namespace Ui {
 class AnimalProfileEditDialog;
@@ -14,6 +15,8 @@ class AnimalProfileEditDialog : public QDialog
 public:
     explicit AnimalProfileEditDialog(QWidget *parent = 0);
     ~AnimalProfileEditDialog();
+    Animal* animal;
+    void loadData(Animal*);
 
 private:
     Ui::AnimalProfileEditDialog *ui;
