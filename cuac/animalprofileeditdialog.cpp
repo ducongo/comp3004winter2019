@@ -6,33 +6,27 @@ AnimalProfileEditDialog::AnimalProfileEditDialog(QWidget *parent) :
     ui(new Ui::AnimalProfileEditDialog)
 {
     ui->setupUi(this);
-//    ui->name->setText(ui->name->text().append(QString::fromStdString(animal->getName())));
-//    ui->specie->setText(ui->specie->text().append(QString::fromStdString(animal->getSpecies())));
-//    ui->breed->setText(ui->breed->text().append(QString::fromStdString(animal->getBreed())));
-//    ui->colour->setText(ui->colour->text().append(QString::fromStdString(animal->getColour())));
-//    ui->special_skill->setText(ui->special_skill->text().append(QString::number(animal->getSkill())));
-//    ui->age->setText(ui->age->text().append(QString::number(animal->getAge())));
-//    ui->weight->setText(ui->weight->text().append(QString::number(animal->getWeight())));
-//    ui->height->setText(ui->height->text().append(QString::number(animal->getHeight())));
-//    ui->energy_level->setText(ui->energy_level->text().append(QString::number(animal->getEnergy_level())));
-//    ui->temperament->setText(ui->temperament->text().append(QString::number(animal->getTemperament())));
-//    ui->kid_friendly->setText(ui->kid_friendly->text().append(QString::number(animal->getKid_friendly())));
-//    ui->level_of_dependency->setText(ui->level_of_dependency->text().append(QString::number(animal->getLevel_of_dependency())));
-//    ui->prone_to_disease->setText(ui->prone_to_disease->text().append(QString::number(animal->getProne_to_disease())));
-//    ui->living_space_needed->setText(ui->living_space_needed->text().append(QString::number(animal->getLiving_space())));
-//    ui->feeding_cost->setText(ui->feeding_cost->text().append(QString::number(animal->getFeeding_cost())));
-//    ui->bad_habits->setText(ui->bad_habits->text().append(QString::number(animal->getBad_habits())));
-//    ui->climate->setText(ui->climate->text().append(QString::number(animal->getClimate())));
-//    ui->level_of_care_needed->setText(ui->level_of_care_needed->text().append(QString::number(animal->getLevel_of_care())));
-//    ui->neatness->setText(ui->neatness->text().append(QString::number(animal->getNeatness())));
-//    ui->current_health_condition->setText(ui->current_health_condition->text().append(QString::number(animal->getCurrent_health_condition())));
-//    ui->intelligence_level->setText(ui->intelligence_level->text().append(QString::number(animal->getIntelligence_level())));
-//    ui->difficulty_to_train->setText(ui->difficulty_to_train->text().append(QString::number(animal->getDifficulty_to_train())));
-//    ui->noise_level->setText(ui->noise_level->text().append(QString::number(animal->getNoise_level())));
+//    addComBoxItems(ui->specie, specie, 5);
+//    ui->specie->setCurrentIndex(0);
+//    addComBoxItems(ui->breed, breed[0], 5);
+//    ui->breed->setCurrentIndex(0);
 
-
-
-
+//    addComBoxItems(ui->special_skill, special_skill, 5);
+//    addComBoxItems(ui->energy_level, energy_level, 3);
+//    addComBoxItems(ui->kid_friendly, kid_friendly, 3);
+//    addComBoxItems(ui->level_of_dependecy, level_of_dependency, 3);
+//    addComBoxItems(ui->prone_to_disease, prone_to_disease, 3);
+//    addComBoxItems(ui->living_space_needed, living_space_needed, 3);
+//    addComBoxItems(ui->feeding_cost, feeding_cost, 3);
+//    addComBoxItems(ui->climate, climate, 3);
+//    addComBoxItems(ui->level_of_care, level_of_care_needed, 3);
+//    addComBoxItems(ui->neatness, neatness, 3);
+//    addComBoxItems(ui->current_health_condition, current_health_condition, 3);
+//    addComBoxItems(ui->intelligence_level, intelligence_level, 3);
+//    addComBoxItems(ui->difficulty_to_train, difficulty_to_train, 3);
+//    addComBoxItems(ui->noise_level, noise_level, 3);
+//    addComBoxItems(ui->temperament, temperament, 3);
+//    addComBoxItems(ui->bad_habits, bad_habits, 3);
 
 }
 
@@ -41,33 +35,69 @@ AnimalProfileEditDialog::~AnimalProfileEditDialog()
     delete ui;
 }
 
+void AnimalProfileEditDialog::addComBoxItems(QComboBox* b, QString s[], int size, int index){
+    //qDebug("PREVIOUS   RUNNING ADD ANIMALLLLLL %c", *(items));
+    b->clear();
+    for (int i = 0; i < size; i++){
+    b->addItem(s[i]);
+   }
+
+   b->setCurrentIndex(index);
+
+}
 void AnimalProfileEditDialog:: loadData(Animal* a){
     animal = a;
+    int x;
+    int y;
+    bool foundX = false;
+    bool foundY = false;
 
+    for(int i = 0; i < 5; i++){
+        if (!foundX){
+            if (specie[i] == QString::fromStdString(a->getSpecies())){
+                x = i;
+                foundX = true;
+            }
+        }
+
+        if (!foundY){
+            for (int j = 0; j < 5; j++){
+                if (specie[j] == QString::fromStdString(a->getBreed())){
+                    x = i;
+                    foundY = true;
+                }
+            }
+        }
+    }
     ui->name->setText(ui->name->text().append(QString::fromStdString(animal->getName())));
-    ui->specie->setText(ui->specie->text().append(QString::fromStdString(animal->getSpecies())));
-    ui->breed->setText(ui->breed->text().append(QString::fromStdString(animal->getBreed())));
     ui->colour->setText(ui->colour->text().append(QString::fromStdString(animal->getColour())));
 
-    ui->special_skill->setValue(animal->getSkill());
+
     ui->age->setValue(animal->getAge());
     ui->weight->setValue(animal->getWeight());
     ui->height->setValue(animal->getHeight());
-    ui->energy_level->setValue(animal->getEnergy_level());
-    ui->temperament->setValue(animal->getTemperament());
-    ui->kid_friendly->setValue(animal->getKid_friendly());
-    ui->level_of_dependency->setValue(animal->getLevel_of_dependency());
-    ui->prone_to_disease->setValue(animal->getProne_to_disease());
-    ui->living_space_required->setValue(animal->getLiving_space());
-    ui->feeding_cost->setValue(animal->getFeeding_cost());
-    ui->bad_habits->setValue(animal->getBad_habits());
-    ui->climate->setValue(animal->getClimate());
-    ui->level_of_care->setValue(animal->getLevel_of_care());
-    ui->neatness->setValue(animal->getNeatness());
-    ui->current_health_condition->setValue(animal->getCurrent_health_condition());
-    ui->intelligence_level->setValue(animal->getIntelligence_level());
-    ui->difficulty_to_train->setValue(animal->getDifficulty_to_train());
-    ui->noise_level->setValue(animal->getNoise_level());
+
+    addComBoxItems(ui->specie, specie, 5, x);
+
+    addComBoxItems(ui->breed, breed[0], 5, y);
+
+
+    addComBoxItems(ui->special_skill, special_skill, 5, animal->getSkill() - 1);
+    addComBoxItems(ui->energy_level, energy_level, 3, animal->getEnergy_level() - 1);
+    addComBoxItems(ui->kid_friendly, kid_friendly, 3, animal->getKid_friendly() - 1);
+    addComBoxItems(ui->level_of_dependecy, level_of_dependency, 3, animal->getLevel_of_dependency() - 1);
+    addComBoxItems(ui->prone_to_disease, prone_to_disease, 3, animal->getProne_to_disease() - 1);
+    addComBoxItems(ui->living_space_needed, living_space_needed, 3, animal->getLiving_space() - 1);
+    addComBoxItems(ui->feeding_cost, feeding_cost, 3, animal->getFeeding_cost() - 1);
+    addComBoxItems(ui->climate, climate, 3, animal->getClimate() - 1);
+    addComBoxItems(ui->level_of_care, level_of_care_needed, 3, animal->getLevel_of_care() - 1);
+    addComBoxItems(ui->neatness, neatness, 3, animal->getNeatness() - 1);
+    addComBoxItems(ui->current_health_condition, current_health_condition, 3, animal->getCurrent_health_condition() - 1);
+    addComBoxItems(ui->intelligence_level, intelligence_level, 3, animal->getIntelligence_level() - 1);
+    addComBoxItems(ui->difficulty_to_train, difficulty_to_train, 3, animal->getDifficulty_to_train() - 1);
+    addComBoxItems(ui->noise_level, noise_level, 3, animal->getNoise_level() - 1);
+    addComBoxItems(ui->temperament, temperament, 3, animal->getTemperament() - 1);
+    addComBoxItems(ui->bad_habits, bad_habits, 3, animal->getBad_habits() - 1);
 }
 
 void AnimalProfileEditDialog::on_pushButton_clicked()
@@ -75,33 +105,54 @@ void AnimalProfileEditDialog::on_pushButton_clicked()
     AnimalProfileEditDialog::close();
 }
 
+
+
 void AnimalProfileEditDialog::on_update_clicked()
 {
     animal->setName((ui->name->text()).toStdString());
-    animal->setSpecies((ui->specie->text()).toStdString());
-    animal->setBreed((ui->breed->text()).toStdString());
+    animal->setSpecies((ui->specie->currentText()).toStdString());
+    animal->setBreed((ui->breed->currentText()).toStdString());
 
     animal->setAge((ui->age->text()).toInt());
     animal->setWeight((ui->weight->text()).toInt());
     animal->setHeight((ui->height->text()).toInt());
-    animal->setEnergy_level((ui->energy_level->text()).toInt());
-    animal->setKid_friendly((ui->kid_friendly->text()).toInt());
-    animal->setLevel_of_dependency((ui->level_of_dependency->text()).toInt());
-    animal->setProne_to_disease((ui->prone_to_disease->text()).toInt());
-    animal->setLiving_space((ui->living_space_required->text()).toInt());
-    animal->setFeeding_cost((ui->feeding_cost->text()).toInt());
-    animal->setClimate((ui->climate->text()).toInt());
-    animal->setLevel_of_care((ui->level_of_care->text()).toInt());
-    animal->setNeatness((ui->neatness->text()).toInt());
-    animal->setCurrent_health_condition((ui->current_health_condition->text()).toInt());
-    animal->setIntelligence_level((ui->intelligence_level->text()).toInt());
-    animal->setDifficulty_to_train((ui->difficulty_to_train->text()).toInt());
-    animal->setNoise_level((ui->noise_level->text()).toInt());
-    animal->setTemperament((ui->temperament->text()).toInt());
-    animal->setBad_habits((ui->bad_habits->text()).toInt());
+
+    animal->setEnergy_level(ui->energy_level->currentIndex() + 1);
+    animal->setKid_friendly(ui->kid_friendly->currentIndex() + 1);
+    animal->setLevel_of_dependency(ui->level_of_dependecy->currentIndex() + 1);
+    animal->setProne_to_disease(ui->prone_to_disease->currentIndex() + 1);
+    animal->setLiving_space(ui->living_space_needed->currentIndex() + 1);
+    animal->setFeeding_cost(ui->feeding_cost->currentIndex() + 1);
+    animal->setClimate(ui->climate->currentIndex() + 1);
+    animal->setLevel_of_care(ui->level_of_care->currentIndex() + 1);
+    animal->setNeatness(ui->neatness->currentIndex() + 1);
+    animal->setCurrent_health_condition(ui->current_health_condition->currentIndex() + 1);
+    animal->setIntelligence_level(ui->intelligence_level->currentIndex() + 1);
+    animal->setDifficulty_to_train(ui->difficulty_to_train->currentIndex() + 1);
+    animal->setNoise_level(ui->noise_level->currentIndex() + 1);
+    animal->setTemperament(ui->temperament->currentIndex() + 1);
+    animal->setBad_habits(ui->bad_habits->currentIndex() + 1);
 
     animal->setColour((ui->colour->text()).toStdString());
-    animal->setSkill((ui->special_skill->text()).toInt());
+    animal->setSkill(ui->special_skill->currentIndex() + 1);
+
     control->updateAnimal(animal);
     AnimalProfileEditDialog::close();
+}
+
+void AnimalProfileEditDialog::on_specie_currentIndexChanged(int index)
+{
+    if (index == 0){
+        addComBoxItems(ui->breed, breed[0], 5, 1);
+    }else if (index == 1){
+        addComBoxItems(ui->breed, breed[1], 5, 1);
+    }else if (index == 2){
+        addComBoxItems(ui->breed, breed[2], 5, 1);
+    }else if (index == 3){
+        addComBoxItems(ui->breed, breed[3], 5, 1);
+    }else if (index == 4){
+        addComBoxItems(ui->breed, breed[4], 5, 1);
+    }
+
+    ui->breed->setCurrentIndex(0);
 }

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>696</width>
+    <width>715</width>
     <height>719</height>
    </rect>
   </property>
@@ -228,25 +228,6 @@
     <string>Economic Background:</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="economic_background">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>300</y>
-     <width>50</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>3</number>
-   </property>
-   <property name="value">
-    <number>2</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
@@ -260,25 +241,6 @@
     <string>Activity Level:</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="activity_level">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>330</y>
-     <width>50</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>3</number>
-   </property>
-   <property name="value">
-    <number>2</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
@@ -290,44 +252,6 @@
    </property>
    <property name="text">
     <string>Experience with Animal:</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="experience_with_animal">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>360</y>
-     <width>50</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>3</number>
-   </property>
-   <property name="value">
-    <number>2</number>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="level_of_patience">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>390</y>
-     <width>50</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>3</number>
-   </property>
-   <property name="value">
-    <number>2</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_13">
@@ -346,7 +270,7 @@
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>400</x>
      <y>360</y>
      <width>151</width>
      <height>17</height>
@@ -356,67 +280,10 @@
     <string>House size</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="house_size">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>360</y>
-     <width>50</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>3</number>
-   </property>
-   <property name="value">
-    <number>2</number>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="strength">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>330</y>
-     <width>50</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>3</number>
-   </property>
-   <property name="value">
-    <number>2</number>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="specie">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>490</y>
-     <width>50</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>5</number>
-   </property>
-   <property name="value">
-    <number>1</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_15">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>400</x>
      <y>330</y>
      <width>111</width>
      <height>17</height>
@@ -444,37 +311,18 @@
     <rect>
      <x>50</x>
      <y>490</y>
-     <width>331</width>
+     <width>91</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Type Animal (1-Dog, 2-Cat, 3-Bird, 4-Bear, 5-Fish):</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="special_skill">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>580</y>
-     <width>50</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>0</number>
-   </property>
-   <property name="maximum">
-    <number>5</number>
-   </property>
-   <property name="value">
-    <number>0</number>
+    <string>Type Animal:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_18">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>400</x>
      <y>300</y>
      <width>161</width>
      <height>17</height>
@@ -484,36 +332,17 @@
     <string>Available Time:</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="available_time">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>300</y>
-     <width>50</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>3</number>
-   </property>
-   <property name="value">
-    <number>2</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_19">
    <property name="geometry">
     <rect>
      <x>50</x>
      <y>580</y>
-     <width>521</width>
+     <width>81</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Special Skill (1-Seeing Eye, 2-Drug Sniffing, 3-Hunting, 4-Security, 5-Showing):</string>
+    <string>Special Skill:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_20">
@@ -535,6 +364,96 @@
      <x>100</x>
      <y>530</y>
      <width>241</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="economi_background">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>300</y>
+     <width>191</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="activity_level">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>330</y>
+     <width>191</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="experience_with_animals">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>360</y>
+     <width>191</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="level_of_patience">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>390</y>
+     <width>191</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="available_time">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>300</y>
+     <width>191</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="strength">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>330</y>
+     <width>191</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="noise_level">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>360</y>
+     <width>191</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_8">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>490</y>
+     <width>191</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_9">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>580</y>
+     <width>191</width>
      <height>25</height>
     </rect>
    </property>
