@@ -4,7 +4,18 @@ using namespace std;
 
 #include "client.h"
 
-Client::Client(string Name, string Email, string Address, int Age, int Gender, int Cell_phone, int Home_phone)
+Client::Client(string Name, string Email, string Address, int Age, int Gender, int Cell_phone, int Home_phone
+               , int Economic_background
+               , int Activity_level
+               , int Experience_with_animal
+               , int Level_of_patience
+               , int House_size
+               , int Available_time
+               , int Strength
+               , int Animal
+               , int Breed
+               , int Special_requirements
+               , int Id)
 {
     name = Name;
     email = Email;
@@ -14,6 +25,18 @@ Client::Client(string Name, string Email, string Address, int Age, int Gender, i
     cellPhone = Cell_phone;
     homePhone = Home_phone;
 
+    economic_background = Economic_background;
+    activity_level =Activity_level;
+    experience_with_animals = Experience_with_animal;
+    level_of_patience = Level_of_patience;
+    house_size = House_size;
+    available_time = Available_time;
+    strength = Strength;
+    animal = Animal;
+    breed = Breed;
+    special_requriements = Special_requirements;
+    id = Id;
+
   //initalizeAttibutes(at);
 }
 
@@ -21,6 +44,8 @@ Client::~Client()
 {
 
 }
+
+int Client::getID(){return id;}
 
 string Client::getName(){return name;}
 string Client::getEmail(){return email;}
@@ -43,26 +68,27 @@ int Client::getHouseSize(){return 0;}
 int Client::getAvailableTime(){return 0;}
 int Client::getStrength(){return 0;}
 
-void Client::setName(){}
-void Client::setEmail(){}
-void Client::setAddress(){}
+void Client::setName(string s){ name = s;}
+void Client::setEmail(string s){ email = s;}
+void Client::setAddress(string s){ address = s;}
 
-void Client::setCellPhone(){}
-void Client::setHomePhone(){}
+void Client::setCellPhone(int i){ cellPhone = i;}
+void Client::setHomePhone(int i){ homePhone = i;}
 
-void Client::setAnimal(){}
-void Client::setBreed(){}
-void Client::setSpecialRequriements(){}
+void Client::setAnimal(int i){ animal = i;}
+void Client::setBreed(int i){ breed = i;}
 
-void Client::setAge(){}
-void Client::setGender(){}
-void Client::setEconomicBackground(){}
-void Client::setActivityLevel(){}
-void Client::setExperienceWithAnimals(){}
-void Client::setLevelOfPatience(){}
-void Client::setHouseSize(){}
-void Client::setAvailableTime(){}
-void Client::setStrength(){}
+void Client::setSpecial_requriements(int i){ special_requriements = i;}
+
+void Client::setAge(int i){ age = i;}
+void Client::setGender(int i){ gender = i;}
+void Client::setEconomic_background(int i){ economic_background = i;}
+void Client::setActivity_level(int i){ activity_level = i;}
+void Client::setExperience_with_animals(int i){ experience_with_animals = i;}
+void Client::setLevel_of_patience(int i){ level_of_patience = i;}
+void Client::setHouse_size(int i){ house_size = i;}
+void Client::setAvailable_time(int i){ available_time = i;}
+void Client::setStrength(int i){ strength = i;}
 
 Attribute* att[17];
 

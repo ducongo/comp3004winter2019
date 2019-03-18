@@ -27,6 +27,10 @@ private slots:
 
 private:
     Ui::ViewAnimalDialog *ui;
+
+
+
+
 };
 
 #endif // VIEWANIMALDIALOG_H

@@ -1,6 +1,7 @@
 #include "clientprofiledialog.h"
 #include "ui_clientprofiledialog.h"
 #include <string>
+#include "clientprofileeditdialog.h"
 
 ClientProfileDialog::ClientProfileDialog(QWidget *parent) :
     QDialog(parent),
@@ -34,3 +35,20 @@ void ClientProfileDialog::loadData(Client* client){
 
 
 
+
+void ClientProfileDialog::on_update_button_clicked()
+{
+    ClientProfileEditDialog d;
+    d.client = c;
+    d.loadData(c);
+    d.setModal(true);
+    d.exec();
+    qDebug("WE RETURNING TO THE CALLING DIALOG");
+
+    resetLabels();
+    loadData(c);
+}
+
+void ClientProfileDialog::resetLabels(){
+
+}

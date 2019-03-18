@@ -17,6 +17,10 @@ public:
     ~ClientProfileDialog();
     Client* c;
     void loadData(Client*);
+    void resetLabels();
+
+private slots:
+    void on_update_button_clicked();
 
 private:
     Ui::ClientProfileDialog *ui;

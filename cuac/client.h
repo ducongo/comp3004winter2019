@@ -10,12 +10,14 @@ using namespace std;
 class Client
 {
   public:
-    Client(string, string, string, int,int, int,int);
+    Client(string, string, string, int,int, int,int,int,int,int,int,int,int,int,int,int,int, int);
     ~Client();
 
     string getName();
     string getEmail();
     string getAddress();
+
+    int getID();
 
     int getCellPhone();
     int getHomePhone();
@@ -34,30 +36,32 @@ class Client
     int getAvailableTime();
     int getStrength();
 
-    void setName();
-    void setEmail();
-    void setAddress();
+    void setName(string);
+    void setEmail(string);
+    void setAddress(string);
 
-    void setCellPhone();
-    void setHomePhone();
+    void setCellPhone(int);
+    void setHomePhone(int);
 
-    void setAnimal();
-    void setBreed();
-    void setSpecialRequriements();
+    void setAnimal(int);
+    void setBreed(int);
+    void setSpecial_requriements(int);
 
-    void setAge();
-    void setGender();
-    void setEconomicBackground();
-    void setActivityLevel();
-    void setExperienceWithAnimals();
-    void setLevelOfPatience();
-    void setHouseSize();
-    void setAvailableTime();
-    void setStrength();
+    void setAge(int);
+    void setGender(int);
+    void setEconomic_background(int);
+    void setActivity_level(int);
+    void setExperience_with_animals(int);
+    void setLevel_of_patience(int);
+    void setHouse_size(int);
+    void setAvailable_time(int);
+    void setStrength(int);
+
 
     Attribute* att[17];
 
   private:
+    int id;
 
     string name;
     string email;
@@ -68,16 +72,16 @@ class Client
 
     int animal;
     int breed;
-    int specialRequriements;
+    int special_requriements;
 
     int age;
     int gender;
-    int economicBackground;
-    int activityLevel;
-    int experienceWithAnimals;
-    int levelOfPatience;
-    int houseSize;
-    int availableTime;
+    int economic_background;
+    int activity_level;
+    int experience_with_animals;
+    int level_of_patience;
+    int house_size;
+    int available_time;
     int strength;
 
     void initalizeAttibutes(int[]);

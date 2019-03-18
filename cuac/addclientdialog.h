@@ -24,6 +24,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_specie_valueChanged(int arg1);
+
+    void on_breed_currentIndexChanged(int index);
+
 private:
     Ui::AddClientDialog *ui;
 };
