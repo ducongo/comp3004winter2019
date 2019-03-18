@@ -61,6 +61,7 @@ void ClientProfileEditDialog::loadData(Client* c){
     ui->gender->setValue(client->getGender());
     ui->cell_phone->setText(QString::number(client->getCellPhone()));
     ui->home_phone->setText(QString::number(client->getHomePhone()));
+    /*
     ui->economic_background->setValue(client->getEconomicBackground());
     ui->activity_level->setValue(client->getActivityLevel());
     ui->experience_with_animal->setValue(client->getExperienceWithAnimals());
@@ -105,6 +106,7 @@ void ClientProfileEditDialog::loadData(Client* c){
     }
 
     ui->breed->setCurrentIndex(client->getBreed());
+    */
 }
 
 void ClientProfileEditDialog::on_pushButton_clicked()
@@ -115,7 +117,7 @@ void ClientProfileEditDialog::on_pushButton_clicked()
 
     client->setCellPhone((ui->cell_phone->text()).toInt());
     client->setHomePhone((ui->home_phone->text()).toInt());
-
+    /*
     client->setAnimal((ui->specie->text()).toInt());
     client->setBreed((ui->breed->currentIndex()) + 1);
     client->setSpecial_requriements((ui->special_skill->text()).toInt());
@@ -129,7 +131,7 @@ void ClientProfileEditDialog::on_pushButton_clicked()
     client->setHouse_size((ui->house_size->text()).toInt());
     client->setAvailable_time((ui->available_time->text()).toInt());
     client->setStrength((ui->strength->text()).toInt());
-
+    */
 
     ClientProfileEditDialog::close();
 }
