@@ -46,7 +46,7 @@ int Database::initTables(){
                    ")")){
         qWarning() << "ERROR: " << query.lastError().text();
     }
-    if(!query.exec("CREATE TABLE animal (name TEXT PRIMARY KEY, species TEXT, breed TEXT, colour TEXT, special TEXT,"
+    if(!query.exec("CREATE TABLE animal (id INTEGER PRIMARY KEY, name TEXT, species TEXT, breed TEXT, colour TEXT, special TEXT,"
                    "gender INTEGER, age INTEGER, weight INTEGER, height INTEGER, energy INTEGER, temperament INTEGER,"
                    "kid INTEGER, habits INTEGER, history INTEGER, dependency INTEGER, disease INTEGER, space INTEGER,"
                    "climate INTEGER, care INTEGER, cleanliness INTEGER, medical INTEGER, health INTEGER, "
@@ -147,7 +147,7 @@ int Database::pushAnimal(AnimalData animal){
     query = QSqlQuery(db2);
     qDebug("Pushing animal into database.");
 
-    if(!query.prepare("INSERT INTO animal VALUES (:name, :species, :breed, :colour, :special,"
+    if(!query.prepare("INSERT INTO animal VALUES (:id, :name, :species, :breed, :colour, :special,"
                       ":gender, :age, :weight, :height, :energy, :temperament, :kid, :habits, :history,"
                       ":dependency, :disease, :space, :climate, :care, :cleanliness, :medical, :health,"
                       ":intelligence, :difficulty, :feeding, :noise"
@@ -156,6 +156,7 @@ int Database::pushAnimal(AnimalData animal){
         return(1);
     }
 
+    query.bindValue(":id", animal.animalId);
     query.bindValue(":name", QString::fromStdString(animal.animalName));
     query.bindValue(":species", QString::fromStdString(animal.typeOfAnimal));
     query.bindValue(":breed", QString::fromStdString(animal.breed));
@@ -198,19 +199,19 @@ int Database::updateAnimal(AnimalData animal){
     qDebug("Update animal in database.");
 
     if(!query.prepare("UPDATE animal"
-                      "SET species=:species, breed=:breed, colour=:colour, special=:special,"
+                      "SET name=:name, species=:species, breed=:breed, colour=:colour, special=:special,"
                       "gender=:gender, age=:age, weight=:weight, height=:height, energy=:energy, "
                       "temperament=:temperament, kid=:kid, habits=:habits, history=:history,"
                       "dependency=:dependency, disease=:disease, space=:space, climate=:climate, "
                       "care=:care, cleanliness:cleanliness, medical:medical, health=:health,"
                       "intelligence=:intelligence, difficulty=:difficulty, feeding=:feeding, noise=:noise"
-                      "WHERE name=:name"
+                      "WHERE id=:id"
                       ")")){
         qWarning() << "ERROR: " << query.lastError().text();
         return(1);
     }
 
-
+    query.bindValue("id", animal.animalId);
     query.bindValue(":name", QString::fromStdString(animal.animalName));
     query.bindValue(":species", QString::fromStdString(animal.typeOfAnimal));
     query.bindValue(":breed", QString::fromStdString(animal.breed));
