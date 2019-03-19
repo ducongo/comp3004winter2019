@@ -3,6 +3,7 @@
 using namespace std;
 
 #include "client.h"
+#include <QDebug>
 
 Client::Client(string Name, string Email, string Address, int Age, int Gender, int Cell_phone, int Home_phone
                , int Economic_background
@@ -36,7 +37,7 @@ Client::Client(string Name, string Email, string Address, int Age, int Gender, i
     breed = Breed;
     special_requriements = Special_requirements;
     id = Id;
-
+    qDebug("Economic background: %d", economic_background);
   //initalizeAttibutes(at);
 }
 
@@ -56,17 +57,17 @@ int Client::getHomePhone(){return homePhone;}
 
 string Client::getAnimal(){return animal;}
 string Client::getBreed(){return breed;}
-int Client::getSpecialRequriements(){return 0;}
+int Client::getSpecialRequriements(){return special_requriements;}
 
 int Client::getAge(){return age;}
 int Client::getGender(){return gender;}
-int Client::getEconomicBackground(){return 0;}
-int Client::getActivityLevel(){return 0;}
-int Client::getExperienceWithAnimals(){return 0;}
-int Client::getLevelOfPatience(){return 0;}
-int Client::getHouseSize(){return 0;}
-int Client::getAvailableTime(){return 0;}
-int Client::getStrength(){return 0;}
+int Client::getEconomicBackground(){return economic_background;}
+int Client::getActivityLevel(){return activity_level;}
+int Client::getExperienceWithAnimals(){return experience_with_animals;}
+int Client::getLevelOfPatience(){return level_of_patience;}
+int Client::getHouseSize(){return house_size;}
+int Client::getAvailableTime(){return available_time;}
+int Client::getStrength(){return strength;}
 
 void Client::setName(string s){ name = s;}
 void Client::setEmail(string s){ email = s;}

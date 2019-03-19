@@ -62,8 +62,8 @@ void AnimalProfileEditDialog:: loadData(Animal* a){
 
         if (!foundY){
             for (int j = 0; j < 5; j++){
-                if (specie[j] == QString::fromStdString(a->getBreed())){
-                    x = i;
+                if (breed[j] == QString::fromStdString(a->getBreed())){
+                    y = j;
                     foundY = true;
                 }
             }
@@ -79,7 +79,7 @@ void AnimalProfileEditDialog:: loadData(Animal* a){
 
     addComBoxItems(ui->specie, specie, 5, x);
 
-    addComBoxItems(ui->breed, breed[0], 5, y);
+    addComBoxItems(ui->breed, breed[x], 5, y);
 
 
     addComBoxItems(ui->special_skill, special_skill, 5, animal->getSkill() - 1);

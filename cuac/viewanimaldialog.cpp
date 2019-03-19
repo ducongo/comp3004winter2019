@@ -37,13 +37,13 @@ void ViewAnimalDialog::loadData(Animal* animal){
     ui->living_space_needed->setText(ui->living_space_needed->text().append(living_space_needed[animal->getLiving_space() - 1]));
     ui->feeding_cost->setText(ui->feeding_cost->text().append(feeding_cost[animal->getFeeding_cost() - 1]));
     ui->bad_habits->setText(ui->bad_habits->text().append(bad_habits[animal->getBad_habits() - 1]));
-    ui->climate->setText(ui->climate->text().append(climate[animal->getClimate()]));
+    ui->climate->setText(ui->climate->text().append(climate[animal->getClimate()-1]));
     ui->level_of_care_needed->setText(ui->level_of_care_needed->text().append(level_of_care_needed[animal->getLevel_of_care() - 1]));
     ui->neatness->setText(ui->neatness->text().append(neatness[animal->getNeatness() - 1]));
     ui->current_health_condition->setText(ui->current_health_condition->text().append(current_health_condition[animal->getCurrent_health_condition() - 1]));
     ui->intelligence_level->setText(ui->intelligence_level->text().append(intelligence_level[animal->getIntelligence_level() - 1]));
     ui->difficulty_to_train->setText(ui->difficulty_to_train->text().append(difficulty_to_train[animal->getDifficulty_to_train() -1]));
-    ui->noise_level->setText(ui->noise_level->text().append(noise_level[animal->getNoise_level()]));
+    ui->noise_level->setText(ui->noise_level->text().append(noise_level[animal->getNoise_level()-1]));
     qDebug("Noise LEVELLLLLLLLLLLL: %d", animal->getNoise_level());
 
 

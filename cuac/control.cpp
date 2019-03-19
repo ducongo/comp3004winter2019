@@ -36,10 +36,10 @@ void Control::addAnimal(Animal* a){
     newAnimal.animalAttr[12] = a->getClimate();
     newAnimal.animalAttr[14] = a->getNeatness();
     newAnimal.animalAttr[15] = a->getCurrent_health_condition();
-    newAnimal.animalAttr[16] = a->getIntelligence_level();
-    newAnimal.animalAttr[17] = a->getDifficulty_to_train();
-    newAnimal.animalAttr[18] = a->getFeeding_cost();
-    newAnimal.animalAttr[19] = a->getNoise_level();
+    newAnimal.animalAttr[17] = a->getIntelligence_level();
+    newAnimal.animalAttr[18] = a->getDifficulty_to_train();
+    newAnimal.animalAttr[19] = a->getFeeding_cost();
+    newAnimal.animalAttr[20] = a->getNoise_level();
 
     if (db->pushAnimal(newAnimal)) qDebug("failed to push animal to db");
 }
@@ -98,9 +98,9 @@ void Control:: populateAnimalArray(){
                                aLists[x]->animalAttr[8],
                                aLists[x]->animalAttr[14],
                                aLists[x]->animalAttr[15],
-                               aLists[x]->animalAttr[16],
                                aLists[x]->animalAttr[17],
-                               aLists[x]->animalAttr[19],
+                               aLists[x]->animalAttr[18],
+                               aLists[x]->animalAttr[20],
                                aLists[x]->animalAttr[5],
                                aLists[x]->animalAttr[7]);
 

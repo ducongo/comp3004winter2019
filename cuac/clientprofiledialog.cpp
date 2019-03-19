@@ -18,7 +18,7 @@ ClientProfileDialog::~ClientProfileDialog()
 
 void ClientProfileDialog::loadData(Client* client){
 
-
+    c = client;
 
     ui->name->setText(ui->name->text().append(QString::fromStdString(client->getName())));
     ui->email->setText(ui->email->text().append(QString::fromStdString(client->getEmail())));
@@ -37,7 +37,10 @@ void ClientProfileDialog::loadData(Client* client){
     ui->strength->setText(ui->strength->text().append(strength[client->getStrength()-1]));
     ui->specie->setText(ui->specie->text().append(QString::fromStdString(client->getAnimal())));
     ui->breed->setText(ui->breed->text().append(QString::fromStdString(client->getBreed())));
-    ui->special_requirement->setText(ui->special_requirement->text().append(special_skill[client->getSpecialRequriements()-1]));
+    if((client->getSpecialRequriements() > 0) && (client->getSpecialRequriements() < 0)){
+        ui->special_requirement->setText(ui->special_requirement->text().append(special_skill[client->getSpecialRequriements()-1]));
+    }
+
     ui->client_id->setText(ui->client_id->text().append(QString::number(client->getID())));
 
 
@@ -62,5 +65,22 @@ void ClientProfileDialog::on_update_button_clicked()
 }
 
 void ClientProfileDialog::resetLabels(){
+    ui->name->setText("Name: ");
+    ui->specie->setText("Animal: ");
+    ui->breed->setText("Breed: ");
+    ui->age->setText("Age: ");
+    ui->gender->setText("Gender: ");
+    ui->address->setText("Address: ");
+    ui->cell_phone->setText("Cell Phone: ");
+    ui->home_phone->setText("Home Phone: ");
+    ui->special_requirement->setText("Special requirement: ");
+    ui->economic_background->setText("Economic background: ");
+    ui->activity_level->setText("Activity level: ");
+    ui->experience_with_animals->setText("Experience with animals: ");
+    ui->level_of_patience->setText("Level of patience: ");
+    ui->house_size->setText("House size: ");
+    ui->available_time->setText("Available time: ");
+    ui->strength->setText("Strength: ");
+
 
 }

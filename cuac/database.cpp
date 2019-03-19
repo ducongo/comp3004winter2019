@@ -29,9 +29,9 @@ int Database::initTables(){
     query = QSqlQuery(db2);
 
     // Initialize the database. If the tables are present then nothing will happen.
-    //query.exec("DROP TABLE staff;");
+    query.exec("DROP TABLE staff;");
     query.exec("DROP TABLE client;");
-    //query.exec("DROP TABLE animal;");
+    query.exec("DROP TABLE animal;");
     if(!query.exec("CREATE TABLE staff (id INTEGER PRIMARY KEY, name TEXT)")){
         qWarning() << "ERROR: " << query.lastError().text();
     }
@@ -486,6 +486,8 @@ int Database::initValues(){
     client1.clientName = "Kyle";
     client1.clientAttr[0] = 665994999;
     client1.clientAttr[1] = 553817834;
+    client1.clientAttr[2] = 20;
+    client1.clientAttr[3] = 0;
     client1.clientAddr = "1049 Bank Street, Ottawa, Ontario";
     client1.clientEmail = "kyle@rogers.ca";
     client1.clientId = 1;
@@ -493,27 +495,81 @@ int Database::initValues(){
     client2.clientAttr[0] = 735647366;
     client2.clientAttr[1] = 133808184;
     client2.clientAttr[2] = 20;
+    client2.clientAttr[3] = 1;
     client2.clientAddr = "4309 49 St, Yellow Knife, Nunavut";
     client2.clientEmail = "parfait@gmail.com";
     client2.clientId = 2;
     client3.clientName = "Victor";
     client3.clientAttr[0] = 663011942;
     client3.clientAttr[1] = 884813436;
+    client3.clientAttr[2] = 20;
+    client3.clientAttr[3] = 1;
     client3.clientAddr = "381 St-Catherine St W, Montral, Quebec";
     client3.clientEmail = "victor@hotmail.com";
     client3.clientId = 3;
     client4.clientName = "Curtis";
     client4.clientAttr[0] = 666076301;
     client4.clientAttr[1] = 888481346;
+    client4.clientAttr[2] = 20;
+    client4.clientAttr[3] = 0;
     client4.clientAddr = "601 5 St Sw, Calgary, Alberta"            ;
     client4.clientEmail = "curtis@mcgill.ca";
     client4.clientId = 4;
     client5.clientName = "Phil";
     client5.clientAttr[0] = 502530000;
     client5.clientAttr[1] = 669956636;
+    client5.clientAttr[2] = 20;
+    client5.clientAttr[3] = 0;
     client5.clientAddr = "100 Queen St W, Toronto, Ontario";
     client5.clientEmail = "phil@cmail.carleton.ca";
     client5.clientId = 5;
+
+    client1.clientAttr[4] = 1;
+    client1.clientAttr[5] = 1;
+    client1.clientAttr[6] = 1;
+    client1.clientAttr[7] = 1;
+    client1.clientAttr[8] = 1;
+    client1.clientAttr[9] = 1;
+    client1.clientAttr[10] = 1;
+    client1.clientAttr[11] = 1;
+
+    client2.clientAttr[4] = 1;
+    client2.clientAttr[5] = 1;
+    client2.clientAttr[6] = 1;
+    client2.clientAttr[7] = 1;
+    client2.clientAttr[8] = 1;
+    client2.clientAttr[9] = 1;
+    client2.clientAttr[10] = 1;
+    client2.clientAttr[11] = 1;
+
+    client3.clientAttr[4] = 1;
+    client3.clientAttr[5] = 1;
+    client3.clientAttr[6] = 1;
+    client3.clientAttr[7] = 1;
+    client3.clientAttr[8] = 1;
+    client3.clientAttr[9] = 1;
+    client3.clientAttr[10] = 1;
+    client3.clientAttr[11] = 1;
+
+    client4.clientAttr[4] = 1;
+    client4.clientAttr[5] = 1;
+    client4.clientAttr[6] = 1;
+    client4.clientAttr[7] = 1;
+    client4.clientAttr[8] = 1;
+    client4.clientAttr[9] = 1;
+    client4.clientAttr[10] = 1;
+    client4.clientAttr[11] = 1;
+
+    client5.clientAttr[4] = 1;
+    client5.clientAttr[5] = 1;
+    client5.clientAttr[6] = 1;
+    client5.clientAttr[7] = 1;
+    client5.clientAttr[8] = 1;
+    client5.clientAttr[9] = 1;
+    client5.clientAttr[10] = 1;
+    client5.clientAttr[11] = 1;
+
+
 
     animal1.animalName = "Victor";
     animal2.animalName = "Kyle";
@@ -626,31 +682,31 @@ int Database::initValues(){
     animal20.specialSkill = "Hunting";
     animal21.specialSkill = "Security";
 
-    animal1.animalAttr[0] = 0;
-    animal2.animalAttr[0] = 0;
-    animal3.animalAttr[0] = 0;
+    animal1.animalAttr[0] = 1;
+    animal2.animalAttr[0] = 1;
+    animal3.animalAttr[0] = 1;
     animal4.animalAttr[0] = 1;
     animal5.animalAttr[0] = 1;
     animal6.animalAttr[0] = 1;
-    animal7.animalAttr[0] = 0;
-    animal8.animalAttr[0] = 0;
-    animal9.animalAttr[0] = 0;
+    animal7.animalAttr[0] = 1;
+    animal8.animalAttr[0] = 1;
+    animal9.animalAttr[0] = 1;
     animal10.animalAttr[0] = 1;
     animal11.animalAttr[0] = 1;
     animal12.animalAttr[0] = 1;
-    animal13.animalAttr[0] = 0;
-    animal14.animalAttr[0] = 0;
-    animal15.animalAttr[0] = 0;
+    animal13.animalAttr[0] = 1;
+    animal14.animalAttr[0] = 1;
+    animal15.animalAttr[0] = 1;
     animal16.animalAttr[0] = 1;
     animal17.animalAttr[0] = 1;
     animal18.animalAttr[0] = 1;
-    animal19.animalAttr[0] = 0;
+    animal19.animalAttr[0] = 1;
     animal20.animalAttr[0] = 1;
-    animal21.animalAttr[0] = 0;
+    animal21.animalAttr[0] = 1;
     animal22.animalAttr[0] = 1;
     animal23.animalAttr[0] = 1;
-    animal24.animalAttr[0] = 0;
-    animal25.animalAttr[0] = 0;
+    animal24.animalAttr[0] = 1;
+    animal25.animalAttr[0] = 1;
 
     animal1.animalAttr[1] = 9;
     animal2.animalAttr[1] = 6;
@@ -834,7 +890,7 @@ int Database::initValues(){
     animal24.animalAttr[6] = 2;
     animal25.animalAttr[6] = 2;
 
-    animal1.animalAttr[70] = 1;
+    animal1.animalAttr[7] = 1;
     animal2.animalAttr[7] = 2;
     animal3.animalAttr[7] = 2;
     animal4.animalAttr[7] = 2;
@@ -1157,6 +1213,60 @@ int Database::initValues(){
     animal23.animalAttr[18] = 2;
     animal24.animalAttr[18] = 1;
     animal25.animalAttr[18] = 1;
+
+    /*feeding cost*/
+    animal1.animalAttr[19] = 1;
+    animal2.animalAttr[19] = 2;
+    animal3.animalAttr[19] = 3;
+    animal4.animalAttr[19] = 3;
+    animal5.animalAttr[19] = 2;
+    animal6.animalAttr[19] = 3;
+    animal7.animalAttr[19] = 3;
+    animal8.animalAttr[19] = 1;
+    animal9.animalAttr[19] = 1;
+    animal10.animalAttr[19] = 3;
+    animal11.animalAttr[19] = 3;
+    animal12.animalAttr[19] = 2;
+    animal13.animalAttr[19] = 3;
+    animal14.animalAttr[19] = 3;
+    animal15.animalAttr[19] = 3;
+    animal16.animalAttr[19] = 2;
+    animal17.animalAttr[19] = 3;
+    animal18.animalAttr[19] = 2;
+    animal19.animalAttr[19] = 3;
+    animal20.animalAttr[19] = 1;
+    animal21.animalAttr[19] = 1;
+    animal22.animalAttr[19] = 1;
+    animal23.animalAttr[19] = 2;
+    animal24.animalAttr[19] = 1;
+    animal25.animalAttr[19] = 1;
+
+    /*Noise level*/
+    animal1.animalAttr[20] = 1;
+    animal2.animalAttr[20] = 2;
+    animal3.animalAttr[20] = 3;
+    animal4.animalAttr[20] = 3;
+    animal5.animalAttr[20] = 2;
+    animal6.animalAttr[20] = 3;
+    animal7.animalAttr[20] = 3;
+    animal8.animalAttr[20] = 1;
+    animal9.animalAttr[20] = 1;
+    animal10.animalAttr[20] = 3;
+    animal11.animalAttr[20] = 3;
+    animal12.animalAttr[20] = 2;
+    animal13.animalAttr[20] = 3;
+    animal14.animalAttr[20] = 3;
+    animal15.animalAttr[20] = 3;
+    animal16.animalAttr[20] = 2;
+    animal17.animalAttr[20] = 3;
+    animal18.animalAttr[20] = 2;
+    animal19.animalAttr[20] = 3;
+    animal20.animalAttr[20] = 1;
+    animal21.animalAttr[20] = 1;
+    animal22.animalAttr[20] = 1;
+    animal23.animalAttr[20] = 2;
+    animal24.animalAttr[20] = 1;
+    animal25.animalAttr[20] = 1;
 
 qDebug("Tryunna add");
     this->pushAnimal(animal1);

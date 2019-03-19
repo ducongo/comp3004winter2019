@@ -28,6 +28,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_update_clicked();
+
 private:
     Ui::ClientProfileEditDialog *ui;
     void addComBoxItems(QComboBox* b, QString[], int, int);
