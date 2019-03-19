@@ -24,6 +24,7 @@ private slots:
 
 private:
     Ui::ClientProfileDialog *ui;
+    QString special_skill[5] = {"Seeing eye", "Drug sniffing", "Hunting", "Security", "Showing"};
     QString specie[5] = {"Dog", "Cat", "Bird", "Bear", "Fish"};
     QString breed[5][5] = {{"Black Labrador","German Shepherd","Corgi","Shiba",""}, {"Calico","Lion","Tiger","Leopard","Panther"}, {"Parrot","Flamingo","Eagle","Vukture","Raven"}, {"Grizzly","Polar","Black","Panda","Koala"}, {"Goldfish","Carp","Koi","Dwarf Lanternshark","Sea Horse"}};
 

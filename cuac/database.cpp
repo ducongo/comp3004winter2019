@@ -30,7 +30,7 @@ int Database::initTables(){
 
     // Initialize the database. If the tables are present then nothing will happen.
     //query.exec("DROP TABLE staff;");
-    //query.exec("DROP TABLE client;");
+    query.exec("DROP TABLE client;");
     //query.exec("DROP TABLE animal;");
     if(!query.exec("CREATE TABLE staff (id INTEGER PRIMARY KEY, name TEXT)")){
         qWarning() << "ERROR: " << query.lastError().text();

@@ -10,7 +10,7 @@ using namespace std;
 class Client
 {
   public:
-    Client(string, string, string, int,int, int,int,int,int,int,int,int,int,int,int,int,int, int);
+    Client(string, string, string, int,int, int,int,int,int,int,int,int,int,int,string,string,int, int);
     ~Client();
 
     string getName();
@@ -22,8 +22,8 @@ class Client
     int getCellPhone();
     int getHomePhone();
 
-    int getAnimal();
-    int getBreed();
+    string getAnimal();
+    string getBreed();
     int getSpecialRequriements();
 
     int getAge();
@@ -43,8 +43,8 @@ class Client
     void setCellPhone(int);
     void setHomePhone(int);
 
-    void setAnimal(int);
-    void setBreed(int);
+    void setAnimal(string);
+    void setBreed(string);
     void setSpecial_requriements(int);
 
     void setAge(int);
@@ -70,8 +70,8 @@ class Client
     int cellPhone;
     int homePhone;
 
-    int animal;
-    int breed;
+    string animal;
+    string breed;
     int special_requriements;
 
     int age;

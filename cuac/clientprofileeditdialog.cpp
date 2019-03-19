@@ -61,43 +61,41 @@ void ClientProfileEditDialog::loadData(Client* c){
     ui->gender->setValue(client->getGender());
     ui->cell_phone->setText(QString::number(client->getCellPhone()));
     ui->home_phone->setText(QString::number(client->getHomePhone()));
-    /*
-    ui->economic_background->setValue(client->getEconomicBackground());
-    ui->activity_level->setValue(client->getActivityLevel());
-    ui->experience_with_animal->setValue(client->getExperienceWithAnimals());
-    ui->level_of_patience->setValue(client->getLevelOfPatience());
-    ui->house_size->setValue(client->getHouseSize());
-    ui->available_time->setValue(client->getAvailableTime());
-    ui->strength->setValue(client->getStrength());
-    ui->specie->setValue(client->getAnimal());
-    //ui->breed->setValue(client->);
-    ui->special_skill->setValue(client->getSpecialRequriements());
 
-    if (client->getAnimal() == 1){
+    addComBoxItems(ui->economic_background, economic_background, 3, client->getEconomicBackground()-1);
+    addComBoxItems(ui->activity_level, activity_level, 3, client->getActivityLevel()-1);
+    addComBoxItems(ui->experience_with_animals, experience_with_animal, 3, client->getExperienceWithAnimals()-1);
+    addComBoxItems(ui->level_of_patience, level_of_patience, 3, client->getLevelOfPatience()-1);
+    addComBoxItems(ui->house_size, house_size, 3, client->getHouseSize()-1);
+    addComBoxItems(ui->available_time, available_time, 3, client->getAvailableTime()-1);
+    addComBoxItems(ui->strength, strength, 3, client->getStrength()-1);
+    addComBoxItems(ui->special_requirement, special_skill, 3, client->getSpecialRequriements()-1);
+
+    if (client->getAnimal() == "Dog"){
         ui->breed->addItem("Black Labrador");
         ui->breed->addItem("German Shepherd");
         ui->breed->addItem("Corgi");
         ui->breed->addItem("Shiba Inu");
         ui->breed->addItem("Bulldog");
-    }else if (client->getAnimal() == 2){
+    }else if (client->getAnimal() == "Cat"){
         ui->breed->addItem("Calico");
         ui->breed->addItem("Lion");
         ui->breed->addItem("Tiger");
         ui->breed->addItem("Leopard");
         ui->breed->addItem("Panther");
-    }else if (client->getAnimal() == 3){
+    }else if (client->getAnimal() == "Bird"){
         ui->breed->addItem("Parrot");
         ui->breed->addItem("Flamingo");
         ui->breed->addItem("Eagle");
         ui->breed->addItem("Vulture");
         ui->breed->addItem("Raven");
-    }else if (client->getAnimal() == 4){
+    }else if (client->getAnimal() == "Bear"){
         ui->breed->addItem("Grizzly");
         ui->breed->addItem("Polar");
         ui->breed->addItem("Black");
         ui->breed->addItem("Black");
         ui->breed->addItem("Koala");
-    }else if (client->getAnimal() == 5){
+    }else if (client->getAnimal() == "Fish"){
         ui->breed->addItem("Goldish");
         ui->breed->addItem("Carp");
         ui->breed->addItem("Koi");
@@ -105,8 +103,8 @@ void ClientProfileEditDialog::loadData(Client* c){
         ui->breed->addItem("Sea horse");
     }
 
-    ui->breed->setCurrentIndex(client->getBreed());
-    */
+    ui->breed->setCurrentText(QString::fromStdString(client->getBreed()));
+
 }
 
 void ClientProfileEditDialog::on_pushButton_clicked()
@@ -117,23 +115,31 @@ void ClientProfileEditDialog::on_pushButton_clicked()
 
     client->setCellPhone((ui->cell_phone->text()).toInt());
     client->setHomePhone((ui->home_phone->text()).toInt());
-    /*
-    client->setAnimal((ui->specie->text()).toInt());
-    client->setBreed((ui->breed->currentIndex()) + 1);
-    client->setSpecial_requriements((ui->special_skill->text()).toInt());
+
+    client->setAnimal((ui->specie->currentText()).toStdString());
+    client->setBreed((ui->breed->currentText()).toStdString());
+    client->setSpecial_requriements((ui->special_requirement->currentIndex()) + 1);
 
     client->setAge((ui->age->text()).toInt());
     client->setGender((ui->gender->text()).toInt());
-    client->setEconomic_background((ui->economic_background->text()).toInt());
-    client->setActivity_level((ui->activity_level->text()).toInt());
-    client->setExperience_with_animals((ui->experience_with_animal->text()).toInt());
-    client->setLevel_of_patience((ui->level_of_patience->text()).toInt());
-    client->setHouse_size((ui->house_size->text()).toInt());
-    client->setAvailable_time((ui->available_time->text()).toInt());
-    client->setStrength((ui->strength->text()).toInt());
-    */
+    client->setEconomic_background((ui->economic_background->currentIndex()) + 1);
+    client->setActivity_level((ui->activity_level->currentIndex()) + 1);
+    client->setExperience_with_animals((ui->experience_with_animals->currentIndex()) + 1);
+    client->setLevel_of_patience((ui->level_of_patience->currentIndex()) + 1);
+    client->setHouse_size((ui->house_size->currentIndex()) + 1);
+    client->setAvailable_time((ui->available_time->currentIndex()) + 1);
+    client->setStrength((ui->strength->currentIndex()) + 1);
+
 
     ClientProfileEditDialog::close();
 }
 
+void ClientProfileEditDialog::addComBoxItems(QComboBox* b, QString s[], int size, int index){
+    b->clear();
+    for (int i = 0; i < size; i++){
+    b->addItem(s[i]);
+   }
+
+   b->setCurrentIndex(index);
+}
 

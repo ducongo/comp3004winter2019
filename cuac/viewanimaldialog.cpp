@@ -20,7 +20,7 @@ void ViewAnimalDialog::loadData(Animal* animal){
 
     a = animal;
     resetLabels();
-    /*
+
     ui->name->setText(ui->name->text().append(QString::fromStdString(animal->getName())));
     ui->specie->setText(ui->specie->text().append(QString::fromStdString(animal->getSpecies())));
     ui->breed->setText(ui->breed->text().append(QString::fromStdString(animal->getBreed())));
@@ -43,14 +43,14 @@ void ViewAnimalDialog::loadData(Animal* animal){
     ui->current_health_condition->setText(ui->current_health_condition->text().append(current_health_condition[animal->getCurrent_health_condition() - 1]));
     ui->intelligence_level->setText(ui->intelligence_level->text().append(intelligence_level[animal->getIntelligence_level() - 1]));
     ui->difficulty_to_train->setText(ui->difficulty_to_train->text().append(difficulty_to_train[animal->getDifficulty_to_train() -1]));
-    //ui->noise_level->setText(ui->noise_level->text().append(noise_level[animal->getNoise_level()]));
+    ui->noise_level->setText(ui->noise_level->text().append(noise_level[animal->getNoise_level()]));
     qDebug("Noise LEVELLLLLLLLLLLL: %d", animal->getNoise_level());
 
-    */
+
 }
 
 void ViewAnimalDialog::resetLabels(){
-    /*
+
     ui->name->setText("Name: ");
     ui->specie->setText("Specie: ");
     ui->breed->setText("Breed: ");
@@ -74,7 +74,7 @@ void ViewAnimalDialog::resetLabels(){
     ui->intelligence_level->setText("Intellihence Level: ");
     ui->difficulty_to_train->setText("Difficulty to Train: ");
     ui->noise_level->setText("Noise Level: ");
-    */
+
 }
 
 void ViewAnimalDialog::on_update_button_clicked()

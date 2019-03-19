@@ -63,7 +63,9 @@ void Control::addClient(Client* c){
     if (db->pushClient(newClient)) qDebug("failed to push animal to db");
 }
 
-void Control::updateAnimal(Animal* a){}
+void Control::updateAnimal(Animal* a){
+    
+}
 void Control::upDateClient(Client* c){}
 
 Animal* Control::getAnimal(int index){return animals->get(index);}
@@ -113,17 +115,28 @@ void Control:: populateClientArray(){
 
     ClientData** cLists = db->pullClients();
 
-//    int x = 0;
-//    while(cLists[x] != NULL){
+    int x = 0;
+    while(cLists[x] != NULL){
 
-//        Client *c = new Client(cLists[x]->clientName, cLists[x]->clientEmail,
-//                              cLists[x]->clientAddr, cLists[x]->clientAttr[2],
-//                              cLists[x]->clientAttr[3], cLists[x]->clientAttr[1],
-//                              cLists[x]->clientAttr[0]);
+        Client *c = new Client(cLists[x]->clientName, cLists[x]->clientEmail,
+                               cLists[x]->clientAddr, cLists[x]->clientAttr[2],
+                              cLists[x]->clientAttr[3], cLists[x]->clientAttr[1],
+                              cLists[x]->clientAttr[0],
+                cLists[x]->clientAttr[4],
+                cLists[x]->clientAttr[5],
+                cLists[x]->clientAttr[6],
+                cLists[x]->clientAttr[7],
+                cLists[x]->clientAttr[8],
+                cLists[x]->clientAttr[9],
+                cLists[x]->clientAttr[10],
+                cLists[x]->species,
+                cLists[x]->breed,
+                cLists[x]->clientAttr[18],
+                cLists[x]->clientId);
 
-//        clients->add(c);
-//        x++;
-//    }
+        clients->add(c);
+        x++;
+    }
 }
 
 int Control::getAnimalArraySize(){return animals->getSize();}

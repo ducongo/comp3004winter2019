@@ -20,7 +20,7 @@ public:
     explicit AddAnimalDialog(QWidget *parent = 0);
     ~AddAnimalDialog();
     Control* control;
-    char temoraryString;
+
 
 
 private slots:

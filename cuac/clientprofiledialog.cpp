@@ -28,6 +28,18 @@ void ClientProfileDialog::loadData(Client* client){
     ui->cell_phone->setText(ui->cell_phone->text().append(QString::number(client->getCellPhone())));
     ui->home_phone->setText(ui->home_phone->text().append(QString::number(client->getHomePhone())));
 
+    ui->economic_background->setText(ui->economic_background->text().append(economic_background[client->getEconomicBackground()-1]));
+    ui->activity_level->setText(ui->activity_level->text().append(activity_level[client->getActivityLevel()-1]));
+    ui->experience_with_animals->setText(ui->experience_with_animals->text().append(experience_with_animal[client->getExperienceWithAnimals()-1]));
+    ui->level_of_patience->setText(ui->level_of_patience->text().append(level_of_patience[client->getLevelOfPatience()-1]));
+    ui->house_size->setText(ui->house_size->text().append(house_size[client->getHouseSize()-1]));
+    ui->available_time->setText(ui->available_time->text().append(available_time[client->getAvailableTime()]));
+    ui->strength->setText(ui->strength->text().append(strength[client->getStrength()-1]));
+    ui->specie->setText(ui->specie->text().append(QString::fromStdString(client->getAnimal())));
+    ui->breed->setText(ui->breed->text().append(QString::fromStdString(client->getBreed())));
+    ui->special_requirement->setText(ui->special_requirement->text().append(special_skill[client->getSpecialRequriements()-1]));
+    ui->client_id->setText(ui->client_id->text().append(QString::number(client->getID())));
+
 
 }
 

@@ -90,7 +90,7 @@
            <item>
             <widget class="QLabel" name="experience_with_animals">
              <property name="text">
-              <string>Experience with animals</string>
+              <string>Experience with animals: </string>
              </property>
             </widget>
            </item>
@@ -134,51 +134,58 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
+            <widget class="QLabel" name="client_id">
+             <property name="text">
+              <string>Client ID: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLabel" name="name">
              <property name="text">
-              <string>Name:</string>
+              <string>Name: </string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLabel" name="email">
              <property name="text">
-              <string>Email:</string>
+              <string>Email: </string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLabel" name="age">
              <property name="text">
-              <string>Age:</string>
+              <string>Age: </string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLabel" name="gender">
              <property name="text">
-              <string>Gender:</string>
+              <string>Gender: </string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLabel" name="address">
              <property name="text">
-              <string>Address:</string>
+              <string>Address: </string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLabel" name="cell_phone">
              <property name="text">
-              <string>Cell Phone:</string>
+              <string>Cell Phone: </string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QLabel" name="home_phone">
              <property name="text">
-              <string>Home Phone:</string>
+              <string>Home Phone: </string>
              </property>
             </widget>
            </item>

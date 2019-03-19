@@ -12,8 +12,8 @@ Client::Client(string Name, string Email, string Address, int Age, int Gender, i
                , int House_size
                , int Available_time
                , int Strength
-               , int Animal
-               , int Breed
+               , string Animal
+               , string Breed
                , int Special_requirements
                , int Id)
 {
@@ -54,8 +54,8 @@ string Client::getAddress(){return address;}
 int Client::getCellPhone(){return cellPhone;}
 int Client::getHomePhone(){return homePhone;}
 
-int Client::getAnimal(){return 0;}
-int Client::getBreed(){return 0;}
+string Client::getAnimal(){return animal;}
+string Client::getBreed(){return breed;}
 int Client::getSpecialRequriements(){return 0;}
 
 int Client::getAge(){return age;}
@@ -75,8 +75,8 @@ void Client::setAddress(string s){ address = s;}
 void Client::setCellPhone(int i){ cellPhone = i;}
 void Client::setHomePhone(int i){ homePhone = i;}
 
-void Client::setAnimal(int i){ animal = i;}
-void Client::setBreed(int i){ breed = i;}
+void Client::setAnimal(string s){ animal = s;}
+void Client::setBreed(string s){ breed = s;}
 
 void Client::setSpecial_requriements(int i){ special_requriements = i;}
 
