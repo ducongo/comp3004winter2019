@@ -29,9 +29,9 @@ int Database::initTables(){
     query = QSqlQuery(db2);
 
     // Initialize the database. If the tables are present then nothing will happen.
-    query.exec("DROP TABLE staff;");
-    query.exec("DROP TABLE client;");
-    query.exec("DROP TABLE animal;");
+    //query.exec("DROP TABLE staff;");
+    //query.exec("DROP TABLE client;");
+    //query.exec("DROP TABLE animal;");
     if(!query.exec("CREATE TABLE staff (id INTEGER PRIMARY KEY, name TEXT)")){
         qWarning() << "ERROR: " << query.lastError().text();
     }
@@ -195,8 +195,12 @@ int Database::pushAnimal(AnimalData animal){
 
 int Database::updateAnimal(AnimalData animal){
     QSqlQuery query;
-    query = QSqlQuery(db);
-    qDebug("Update animal in database.");
+    const QString DRIVER("QSQLITE");
+    QSqlDatabase db2;
+    db2 = QSqlDatabase::addDatabase(DRIVER);
+    db2.setDatabaseName("./cuacs_db.sql");
+    db2.open();
+    query = QSqlQuery(db2);
 
     if(!query.prepare("UPDATE animal"
                       "SET name=:name, species=:species, breed=:breed, colour=:colour, special=:special,"
@@ -1744,7 +1748,6 @@ int Database::initValues(){
     animal24.animalAttr[20] = 1;
     animal25.animalAttr[20] = 1;
 
-qDebug("Tryunna add");
     this->pushAnimal(animal1);
     this->pushAnimal(animal2);
     this->pushAnimal(animal3);
@@ -1790,8 +1793,4 @@ qDebug("Tryunna add");
     this->pushClient(client18);
     this->pushClient(client19);
     this->pushClient(client20);
-
-
-
-    return(0);
 }
