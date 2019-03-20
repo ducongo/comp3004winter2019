@@ -31,6 +31,19 @@ void LoginDialog::on_staff_clicked()
 
 void LoginDialog::on_client_clicked()
 {
-    home->is_staff_member = 2;
-    LoginDialog::close();
+    if((ui->uid->text()).toInt() > 0){
+        home->is_staff_member = 2;
+        control->setCurrentUID((ui->uid->text()).toInt());
+        LoginDialog::close();
+    }else{
+        ui->error_label->setText("The User ID you provided is not valid");
+    }
+
+}
+
+void LoginDialog:: setMax(int MAX){
+    max = MAX;
+    ui->uid->setMinimum(0);
+    ui->uid->setMaximum(max);
+    ui->uid->setValue(0);
 }

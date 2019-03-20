@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "client.h"
+#include "control.h"
 
 namespace Ui {
 class ClientProfileDialog;
@@ -16,6 +17,7 @@ public:
     explicit ClientProfileDialog(QWidget *parent = 0);
     ~ClientProfileDialog();
     Client* c;
+    Control* control;
     void loadData(Client*);
     void resetLabels();
 

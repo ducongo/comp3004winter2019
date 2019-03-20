@@ -6,9 +6,14 @@ ErrorUserDialog::ErrorUserDialog(QWidget *parent) :
     ui(new Ui::ErrorUserDialog)
 {
     ui->setupUi(this);
+
 }
 
 ErrorUserDialog::~ErrorUserDialog()
 {
     delete ui;
+}
+
+void ErrorUserDialog::setText(QString s){
+    ui->erroText->setText(s);
 }

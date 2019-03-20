@@ -24,6 +24,7 @@ public:
     int is_staff_member = 0;
     void loadArrays();
     void loadData();
+    void loginPrompt();
 
 private slots:
     void on_runACMButton_clicked();

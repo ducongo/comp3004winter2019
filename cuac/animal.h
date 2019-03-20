@@ -10,12 +10,14 @@ using namespace std;
 class Animal
 {
   public:
-    Animal(string, string, string, int, int, int, string, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+    Animal(string, string, string, int, int, int, string, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
     ~Animal();
 
     string getName();
     string getSpecies();
     string getBreed();
+
+    int getID();
 
     int getAge();
     int getWeight();
@@ -94,6 +96,8 @@ class Animal
 
     string colour;
     int specialSkill;
+
+    int id;
 
     void initalizeAttibutes(int[]);
 

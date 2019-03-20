@@ -24,8 +24,8 @@ AddClientDialog::AddClientDialog(QWidget *parent) :
     addComBoxItems(ui->breed, breed[0], 5);
     addComBoxItems(ui->special_skill, special_skill, 5);
 
-    ui->home_phone->setValidator(new QIntValidator(0, 9999999, this));
-    ui->cell_phone->setValidator(new QIntValidator(0, 9999999, this));
+    ui->home_phone->setValidator(new QIntValidator(0, 999999999, this));
+    ui->cell_phone->setValidator(new QIntValidator(0, 999999999, this));
 
 
 }

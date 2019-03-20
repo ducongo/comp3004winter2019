@@ -570,7 +570,31 @@ int Database::initValues(){
     client5.clientAttr[10] = 1;
     client5.clientAttr[11] = 1;
 
-
+    animal1.animalId = 1;
+    animal2.animalId = 2;
+    animal3.animalId = 3;
+    animal4.animalId = 4;
+    animal5.animalId = 5;
+    animal6.animalId = 6;
+    animal7.animalId = 7;
+    animal8.animalId = 8;
+    animal9.animalId = 9;
+    animal10.animalId = 10;
+    animal11.animalId = 11;
+    animal12.animalId = 12;
+    animal13.animalId = 13;
+    animal14.animalId = 14;
+    animal15.animalId = 15;
+    animal16.animalId = 16;
+    animal17.animalId = 17;
+    animal18.animalId = 18;
+    animal19.animalId = 19;
+    animal20.animalId = 20;
+    animal21.animalId = 21;
+    animal22.animalId = 22;
+    animal23.animalId = 23;
+    animal24.animalId = 24;
+    animal25.animalId = 25;
 
     animal1.animalName = "Victor";
     animal2.animalName = "Kyle";

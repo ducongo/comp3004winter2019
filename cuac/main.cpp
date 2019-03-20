@@ -18,10 +18,11 @@ int main(int argc, char *argv[])
     HomeView w;
 
     control->setHomeView(&w);
-    //control->populateAnimalArray();
-    //control->populateClientArray();
+    control->populateAnimalArray();
+    control->populateClientArray();
 
     control->getHomeView()->loadArrays();
+    control->getHomeView()->loginPrompt();
     control->getHomeView()->show();
     //w.show();
 

@@ -48,8 +48,8 @@ void AddAnimalDialog::addComBoxItems(QComboBox* b, QString s[], int size){
     //qDebug("PREVIOUS   RUNNING ADD ANIMALLLLLL %c", *(items));
     b->clear();
     for (int i = 0; i < size; i++){
-    b->addItem(s[i]);
-   }
+        b->addItem(s[i]);
+    }
 
    b->setCurrentIndex(1);
 
@@ -80,7 +80,8 @@ void AddAnimalDialog::on_pushButton_clicked()
                            , (ui->difficulty_to_train->currentIndex()) + 1
                            , (ui->noise_level->currentIndex()) + 1
                            , (ui->temperament->currentIndex()) + 1
-                           , (ui->bad_habits->currentIndex()) + 1);
+                           , (ui->bad_habits->currentIndex()) + 1
+                           , control->getAnimalArraySize() + 1);
 
     control->addAnimal(a);
 

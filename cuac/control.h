@@ -35,6 +35,9 @@ class Control
     int getClientArraySize();
 
     void setHomeView(HomeView*);
+    void setCurrentUID(int);
+
+    int getCurrentUID();
 
     string checking = "THIS FIELD SHOULD NOT BE EMPTY";
     QString energy_level[3] = {"Low", "Mwdium", "High"};
@@ -73,6 +76,7 @@ class Control
     Array<Client>* clients;
     Database* db;
     HomeView* home;
+    int currentUID;
 
 
 };

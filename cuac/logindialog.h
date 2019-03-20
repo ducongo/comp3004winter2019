@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "homeview.h"
+#include "control.h"
 
 namespace Ui {
 class LoginDialog;
@@ -16,6 +17,10 @@ public:
     explicit LoginDialog(QWidget *parent = 0);
     ~LoginDialog();
     HomeView* home;
+    Control* control;
+    int min = 0;
+    int max = 0;
+    void setMax(int);
 
 private slots:
     void on_pushButton_clicked();

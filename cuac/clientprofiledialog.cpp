@@ -2,6 +2,7 @@
 #include "ui_clientprofiledialog.h"
 #include <string>
 #include "clientprofileeditdialog.h"
+#include "erroruserdialog.h"
 
 ClientProfileDialog::ClientProfileDialog(QWidget *parent) :
     QDialog(parent),
@@ -53,15 +54,27 @@ void ClientProfileDialog::loadData(Client* client){
 
 void ClientProfileDialog::on_update_button_clicked()
 {
-    ClientProfileEditDialog d;
-    d.client = c;
-    d.loadData(c);
-    d.setModal(true);
-    d.exec();
-    qDebug("WE RETURNING TO THE CALLING DIALOG");
+    qDebug("CLIENT IS LOGGED IN");
 
-    resetLabels();
-    loadData(c);
+    if ((control->getCurrentUID() != 0) || (c->getID() == control->getCurrentUID())){
+        ClientProfileEditDialog d;
+        d.client = c;
+        d.control = control;
+        d.loadData(c);
+        d.setModal(true);
+        d.exec();
+        qDebug("CLIENT IS LOGGED IN");
+
+        resetLabels();
+        loadData(c);
+    }else{
+
+        ErrorUserDialog e;
+        e.setText("You can't modify other clients profiles!");
+        e.setModal(true);
+        e.exec();
+    }
+
 }
 
 void ClientProfileDialog::resetLabels(){

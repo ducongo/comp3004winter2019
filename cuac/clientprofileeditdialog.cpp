@@ -5,8 +5,9 @@ ClientProfileEditDialog::ClientProfileEditDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ClientProfileEditDialog)
 {
-
-
+    ui->setupUi(this);
+    ui->home_phone->setValidator(new QIntValidator(0, 999999999, this));
+    ui->cell_phone->setValidator(new QIntValidator(0, 999999999, this));
 }
 
 ClientProfileEditDialog::~ClientProfileEditDialog()
@@ -72,8 +73,8 @@ void ClientProfileEditDialog::loadData(Client* c){
                     x = i;
                     foundY = true;
                     addComBoxItems(ui->specie, specie, 5, x);
-
                     addComBoxItems(ui->breed, breed[x], 5, y);
+
                 }
             }
         }
@@ -81,7 +82,7 @@ void ClientProfileEditDialog::loadData(Client* c){
 
 
 
-    ui->setupUi(this);
+
     ui->name->setText(QString::fromStdString(client->getName()));
     ui->email->setText(QString::fromStdString(client->getEmail()));
     ui->address->setText(QString::fromStdString(client->getAddress()));

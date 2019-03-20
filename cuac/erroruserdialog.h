@@ -14,6 +14,8 @@ class ErrorUserDialog : public QDialog
 public:
     explicit ErrorUserDialog(QWidget *parent = 0);
     ~ErrorUserDialog();
+    QString errorText;
+    void setText(QString);
 
 private:
     Ui::ErrorUserDialog *ui;

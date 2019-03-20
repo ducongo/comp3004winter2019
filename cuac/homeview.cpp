@@ -24,10 +24,7 @@ HomeView::HomeView(QWidget *parent) :
     ui->listWidgetClient->setIconSize(QSize(128, 128));
     ui->listWidgetClient->setResizeMode(QListWidget::Adjust);
 
-    LoginDialog loginDialog;
-    loginDialog.home = this;
-    loginDialog.setModal(true);
-    loginDialog.exec();
+
 
 }
 
@@ -53,10 +50,7 @@ void HomeView::on_listWidgetAnimal_itemDoubleClicked(QListWidgetItem *item)
         //aprofile.animal = animals->get(item->listWidget()->currentRow());
         profile.exec();
     }else{
-        LoginDialog loginDialog;
-        loginDialog.home = this;
-        loginDialog.setModal(true);
-        loginDialog.exec();
+        loginPrompt();
     }
 
 }
@@ -71,10 +65,7 @@ void HomeView::on_listWidgetClient_itemDoubleClicked(QListWidgetItem *item)
         //aprofile.animal = animals->get(item->listWidget()->currentRow());
         profile.exec();
     }else{
-        LoginDialog loginDialog;
-        loginDialog.home = this;
-        loginDialog.setModal(true);
-        loginDialog.exec();
+        loginPrompt();
     }
 
 }
@@ -92,10 +83,7 @@ void HomeView::on_addAnimal_clicked()
         e.setModal(true);
         e.exec();
     }else{
-        LoginDialog loginDialog;
-        loginDialog.home = this;
-        loginDialog.setModal(true);
-        loginDialog.exec();
+        loginPrompt();
     }
 
 }
@@ -115,10 +103,7 @@ void HomeView::on_addClient_clicked()
         e.exec();
     }else{
 
-        LoginDialog loginDialog;
-        loginDialog.home = this;
-        loginDialog.setModal(true);
-        loginDialog.exec();
+        loginPrompt();
     }
 
 }
@@ -126,10 +111,7 @@ void HomeView::on_addClient_clicked()
 void HomeView::on_pushButton_clicked()
 {
 
-    LoginDialog loginDialog;
-    loginDialog.home = this;
-    loginDialog.setModal(true);
-    loginDialog.exec();
+    loginPrompt();
 }
 
 void HomeView::loadData()
@@ -170,10 +152,21 @@ void HomeView::loadData()
 
 void HomeView::loadArrays(){
 
-    control->populateAnimalArray();
-    control->populateClientArray();
+    //control->populateAnimalArray();
+    //control->populateClientArray();
 
 
     loadData();
 
+}
+
+void HomeView::loginPrompt(){
+    LoginDialog loginDialog;
+    loginDialog.home = this;
+    loginDialog.control = control;
+    loginDialog.setMax(control->getClientArraySize());
+    loginDialog.setModal(true);
+    loginDialog.exec();
+    ui->current_uid->setText("Cuurent user ID: " + QString::number(control->getCurrentUID()));
+    ui->current_uid_2->setText("Cuurent user ID: " + QString::number(control->getCurrentUID()));
 }

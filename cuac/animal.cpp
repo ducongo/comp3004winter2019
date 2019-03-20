@@ -20,7 +20,8 @@ Animal::Animal(string Name,string Species,string Breed,int Age,int Weight,int He
                int Difficulty_to_train,
                int Noise_level,
                int Temperament,
-               int Bad_habits)
+               int Bad_habits,
+               int ID)
 {
   name = Name;
   species = Species;
@@ -47,6 +48,8 @@ Animal::Animal(string Name,string Species,string Breed,int Age,int Weight,int He
   temperament = Temperament;
   bad_habits = Bad_habits;
 
+  id = ID;
+
   //initalizeAttibutes(at);
 }
 
@@ -58,6 +61,8 @@ Animal::~Animal()
 string Animal::getName(){return name;}
 string Animal::getSpecies(){return species;}
 string Animal::getBreed(){return breed;}
+
+int Animal::getID(){return id;}
 
 int Animal::getAge(){return age;}
 int Animal::getWeight(){return weight;}

@@ -27,7 +27,7 @@
      <enum>QTabWidget::West</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tabanimalTab">
      <attribute name="title">
@@ -60,6 +60,13 @@
           </widget>
          </item>
          <item>
+          <widget class="QLabel" name="current_uid">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="horizontalSpacer">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -75,7 +82,7 @@
          <item>
           <widget class="QLabel" name="total">
            <property name="text">
-            <string>@00 animals ready for adoption</string>
+            <string/>
            </property>
           </widget>
          </item>
@@ -133,6 +140,13 @@
           <widget class="QPushButton" name="addClient">
            <property name="text">
             <string>ADD CLIENT</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="current_uid_2">
+           <property name="text">
+            <string>TextLabel</string>
            </property>
           </widget>
          </item>
