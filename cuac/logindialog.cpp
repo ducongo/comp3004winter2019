@@ -26,6 +26,7 @@ void LoginDialog::on_pushButton_2_clicked()
 void LoginDialog::on_staff_clicked()
 {
     home->is_staff_member = 1;
+    control->setCurrentUID(0);
     LoginDialog::close();
 }
 

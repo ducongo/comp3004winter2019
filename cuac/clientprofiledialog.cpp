@@ -56,7 +56,7 @@ void ClientProfileDialog::on_update_button_clicked()
 {
     qDebug("CLIENT IS LOGGED IN");
 
-    if ((control->getCurrentUID() != 0) || (c->getID() == control->getCurrentUID())){
+    if ((control->getCurrentUID() == 0) || (c->getID() == control->getCurrentUID())){
         ClientProfileEditDialog d;
         d.client = c;
         d.control = control;

@@ -98,8 +98,8 @@ void ClientProfileEditDialog::loadData(Client* c){
     addComBoxItems(ui->house_size, house_size, 3, (client->getHouseSize())-1);
     addComBoxItems(ui->available_time, available_time, 3, (client->getAvailableTime())-1);
     addComBoxItems(ui->strength, strength, 3, (client->getStrength())-1);
-    addComBoxItems(ui->special_requirement, special_skill, 3, (client->getSpecialRequriements())-1);
-
+    addComBoxItems(ui->special_requirement, special_skill, 5, (client->getSpecialRequriements())-1);
+    addComBoxItems(ui->specie, specie, 3, 2);
     if (client->getAnimal() == "Dog"){
         ui->breed->addItem("Black Labrador");
         ui->breed->addItem("German Shepherd");
@@ -130,6 +130,12 @@ void ClientProfileEditDialog::loadData(Client* c){
         ui->breed->addItem("Koi");
         ui->breed->addItem("Dwarf Lanternshark");
         ui->breed->addItem("Sea horse");
+    }else{
+        ui->breed->addItem("Black Labrador");
+        ui->breed->addItem("German Shepherd");
+        ui->breed->addItem("Corgi");
+        ui->breed->addItem("Shiba Inu");
+        ui->breed->addItem("Bulldog");
     }
 
     ui->breed->setCurrentText(QString::fromStdString(client->getBreed()));
@@ -199,6 +205,7 @@ void ClientProfileEditDialog::on_update_clicked()
     client->setStrength((ui->strength->currentIndex()) + 1);
 
     control->upDateClient(client);
+
     ClientProfileEditDialog::close();
 
 }

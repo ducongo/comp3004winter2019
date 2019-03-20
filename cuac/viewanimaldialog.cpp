@@ -2,6 +2,7 @@
 #include "ui_viewanimaldialog.h"
 #include "animal.h"
 #include "animalprofileeditdialog.h"
+#include "erroruserdialog.h"
 
 ViewAnimalDialog::ViewAnimalDialog(QWidget *parent) :
     QDialog(parent),
@@ -79,14 +80,24 @@ void ViewAnimalDialog::resetLabels(){
 
 void ViewAnimalDialog::on_update_button_clicked()
 {
-    AnimalProfileEditDialog d;
-    d.animal = a;
-    d.loadData(a);
-    d.setModal(true);
-    d.exec();
-    qDebug("WE RETURNING TO THE CALLING DIALOG");
 
-    resetLabels();
-    loadData(a);
+    if (control->getCurrentUID() == 0){
+        AnimalProfileEditDialog d;
+        d.animal = a;
+        d.loadData(a);
+        d.setModal(true);
+        d.exec();
+        qDebug("WE RETURNING TO THE CALLING DIALOG");
+
+        resetLabels();
+        loadData(a);
+    }else{
+
+        ErrorUserDialog e;
+        e.setText("You can't modify other clients profiles!");
+        e.setModal(true);
+        e.exec();
+    }
+
 
 }

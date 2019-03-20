@@ -49,6 +49,7 @@ void HomeView::on_listWidgetAnimal_itemDoubleClicked(QListWidgetItem *item)
         //profile.loadData(animals->get(item->listWidget()->currentRow()));
         //aprofile.animal = animals->get(item->listWidget()->currentRow());
         profile.exec();
+        loadData();
     }else{
         loginPrompt();
     }
@@ -60,10 +61,12 @@ void HomeView::on_listWidgetClient_itemDoubleClicked(QListWidgetItem *item)
     if (is_staff_member != 0){
         qDebug("Animal Selected at index: %d", item->listWidget()->currentRow());
         ClientProfileDialog profile;
+        profile.control = control;
         profile.setModal(true);
         profile.loadData(control->getClient(item->listWidget()->currentRow()));
         //aprofile.animal = animals->get(item->listWidget()->currentRow());
         profile.exec();
+        loadData();
     }else{
         loginPrompt();
     }
